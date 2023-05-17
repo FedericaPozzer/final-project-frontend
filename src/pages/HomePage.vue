@@ -20,10 +20,13 @@ export default{
 </script>
 
 <template>
-    <div class="row row-cols-1 m-2 gap-2">
-      <RestaurantComponent v-for="restaurant in restaurants" :restaurant-data="restaurant" class="col"/>
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 gy-2">
+            <RestaurantComponent v-for="restaurant in restaurants" :restaurant-data="restaurant" class="col"/>
+        </div>
     </div>
-  
+
 </template>
 
 <style scoped lang="scss">
