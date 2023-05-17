@@ -19,6 +19,14 @@ export default{
                 {{ type.name }}
             </span>
           </p>
+          <router-link :to="{
+            name : 'restaurant-detail',
+            params: {
+                'id' : restaurantData.id
+            }
+          }">
+            Vedi
+          </router-link>
         </div>
       </div>
 </template>

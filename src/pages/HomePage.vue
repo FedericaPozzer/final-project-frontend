@@ -10,7 +10,7 @@ export default{
     },
     created(){
       axios.get('http://127.0.0.1:8000/api/restaurants')
-      .then((response)=> this.restaurants = response.data.data)
+      .then((response)=> this.restaurants = response.data)
     },
     components: {
       RestaurantComponent
