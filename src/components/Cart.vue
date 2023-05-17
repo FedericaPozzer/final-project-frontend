@@ -25,8 +25,10 @@ export default{
 <template>
     <div v-for="dish in store.dishes">
         {{ dish.name }}
+        {{ dish.quantity }}
     </div>
     <button @click="sendCart()">
         Invia ordine
     </button>
+    <button @click="store.deleteCart">Svuota il cestino</button>
 </template>
