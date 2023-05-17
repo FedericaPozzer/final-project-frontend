@@ -1,14 +1,14 @@
 <script>
-import Cart from './components/Cart.vue'
+import navbar from './components/navbar.vue'
 export default{
   components: {
-    Cart
+    navbar
   }
 }
 </script>
 
 <template>
-  <Cart />
+  <navbar />
   <div class="container">
     <router-view></router-view>
   </div>

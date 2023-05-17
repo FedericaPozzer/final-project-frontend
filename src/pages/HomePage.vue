@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios'
 import RestaurantComponent from '../components/RestaurantHomeComponent.vue'
+
 export default{
     name:'Homepage',
     data(){
@@ -14,7 +15,6 @@ export default{
     },
     components: {
       RestaurantComponent,
-      navbar
     }
 }
 

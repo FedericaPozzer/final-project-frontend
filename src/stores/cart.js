@@ -5,7 +5,8 @@ import { useLocalStorage } from "@vueuse/core"
 export const useCartStore = defineStore("cart", {
   state: () => {
     return { 
-      dishes: useLocalStorage('dishes', [])
+      dishes: useLocalStorage('dishes', []),
+      totalPrice: useLocalStorage('price', 0)
      };
   },
   actions: {
@@ -24,12 +25,14 @@ export const useCartStore = defineStore("cart", {
                 if(dish.id == otherDishes.id)
                 {
                     otherDishes['quantity'] += 1
+                    this.totalPrice += dish.price
                     console.log(otherDishes)
                 }
             }
         }
         else{
             dish['quantity'] = 1
+            this.totalPrice += dish.price
             this.dishes.push(dish);
         }
         console.log(isAlreadyInCart)
@@ -39,17 +42,47 @@ export const useCartStore = defineStore("cart", {
     },
     deleteCart(){
         this.dishes = []
+        this.totalPrice = 0
     },
-    reset() {
-      this.count = 0;
+    minusOne(dish){
+        if(dish['quantity'] == 1)
+        {
+            let i = 0
+            for (let otherDishes of this.dishes)
+            {
+                if(dish.id == otherDishes.id)
+                {
+                    this.dishes.splice(i, 1)
+                    this.totalPrice -= dish.price
+                }
+                else{
+                    i++
+                }
+            }
+        }
+        else{
+            for (let otherDishes of this.dishes)
+            {
+                if(dish.id == otherDishes.id)
+                {
+                    otherDishes.quantity -= 1
+                    this.totalPrice -= dish.price
+                }
+            }
+        }
+    },
+    moreOne(dish){
+        for (let otherDishes of this.dishes)
+            {
+                if(dish.id == otherDishes.id)
+                {
+                    otherDishes.quantity += 1
+                    this.totalPrice += dish.price
+                }
+            }
     }
   },
   getters: {
-    doubleCount: (state) => {
-      return state.count * 2;
-    },
-    squareCount: (state) => {
-      return state.count ** 2;
-    },
+    
   },
 });
