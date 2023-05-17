@@ -10,28 +10,47 @@ export default{
 </script>
 
 <template>
+
+<div class="card-group">
+    <!-- Card Ristorante (genrica) -->
     <div class="card">
-        <img :src="restaurantData.image" class="card-img-top img-fluid mt-2 rounded-3" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{restaurantData.name}}</h5>
-          <p class="card-text d-flex gap-1">
-            <span v-for="type in restaurantData.types">
-                {{ type.name }}
-            </span>
-          </p>
-          <router-link :to="{
-            name : 'restaurant-detail',
-            params: {
+
+        <!-- immagine ristorante -->
+        <img :src="restaurantData.image" class="card-img-top img-fluid" alt="restaurantImage">
+        
+        <!-- card body -->
+        <div class="card-body d-flex flex-column">
+            <!-- nome ristorante -->
+            <h4 class="card-title">{{restaurantData.name}}</h4>
+            <!-- tipologie -->
+            <p class="card-text d-flex flex-wrap gap-1 text-secondary">
+                <span v-for="type in restaurantData.types">
+                    {{ type.name }}
+                </span>
+            </p>
+
+            <div class="mt-auto">
+            <router-link :to="{
+                name : 'restaurant-detail',
+                params: {
                 'id' : restaurantData.id
-            }
-          }">
-            Vedi
-          </router-link>
+                }
+                }">
+                   
+                <button class="btn btn-success">
+                    Vedi Menù
+                </button>
+            </router-link>
+            </div>
+
         </div>
-      </div>
+    </div>
+</div>
+      
 </template>
 
 <style lang="scss" scoped>
+
   
 </style>
 
