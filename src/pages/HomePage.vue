@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios'
 import RestaurantComponent from '../components/RestaurantHomeComponent.vue'
+import navbar from '../components/navbar.vue'
 export default{
     name:'Homepage',
     data(){
@@ -13,13 +14,15 @@ export default{
       .then((response)=> this.restaurants = response.data)
     },
     components: {
-      RestaurantComponent
+      RestaurantComponent,
+      navbar
     }
 }
 
 </script>
 
 <template>
+  <navbar></navbar>
     <div class="row row-cols-1 m-2 gap-2">
       <RestaurantComponent v-for="restaurant in restaurants" :restaurant-data="restaurant" class="col"/>
     </div>
