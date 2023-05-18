@@ -34,10 +34,10 @@ export default{
 
     
     <!-- Componente Search -->
-    
+
     <div v-if="expanded">
-        <router-view></router-view>
         <Search v-show="expanded" @close="expanded = 0"/>
+        <router-view v-if="!expanded"></router-view>
     </div>
 </template>
 
