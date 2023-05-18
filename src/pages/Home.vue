@@ -1,7 +1,8 @@
 <script>
 import axios from 'axios'
-import RestaurantComponent from '../components/RestaurantHomeComponent.vue'
-
+import Jumbotron from '../components/Jumbotron.vue'
+import Types from '../components/types/Types.vue'
+import RestaurantsList from '../components/restaurants/home/RestaurantsList.vue'
 export default{
     name:'Homepage',
     data(){
@@ -14,18 +15,23 @@ export default{
       .then((response)=> this.restaurants = response.data)
     },
     components: {
-      RestaurantComponent,
+      Jumbotron,
+      Types,
+      RestaurantsList
     }
 }
 
 </script>
 
 <template>
-    <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 gy-2">
-            <RestaurantComponent v-for="restaurant in restaurants" :restaurant-data="restaurant" class="col"/>
-        </div>
-    </div>
+<!-- Jumbotron -->
+<Jumbotron />
+
+<!-- Categorie -->
+<Types />
+
+<!-- Ristoranti -->
+<RestaurantsList />
 
 </template>
 

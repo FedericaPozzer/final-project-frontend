@@ -1,50 +1,44 @@
+<!-- Navbar -->
+
 <script>
-// import MyComponent from "./components/MyComponent.vue";
-
-export default {
-  data() {
-    return {
-      title: "Hello world"
-    }
-  }
-
-  // components: {
-  //   MyComponent,
-  // },
-};
 </script>
-
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="/logo.png" alt="logo" height="24">
-            </a>
+    <header class="d-flex">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                    <a class="nav-link">Tipologie</a>
-                    </li>
-                </ul>
-
-                <form class="d-flex me-auto" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Cerca un ristorante/piatto" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Cerca</button>
-                </form>
-
-                <button class="btn btn-primary">Diventa Partner</button>
+        <!-- SX -->
+        <div class="logo">
+            <!-- Logo con redirect homepage -->
+            <div>
+                <a href="/">
+                    Logo
+                </a>
             </div>
         </div>
-    </nav>
-</template>
+        
+        <!-- DX -->
+        <div class="d-flex justify-content-end w-100 gap-2">
+            <!-- Searchbar / Lens -->
+            <div>
+                Lens
+            </div>
+            <!-- Redirect to Backend -->
+            <div>
+                Link
+            </div>
+        </div>
 
-<style lang="scss" scoped></style>
+    </header>
+</template>
+<style lang="scss" scoped>
+header{
+    height: 10vh;
+    width: 100%;
+    background-color: green;
+    .logo{
+        width: 30%;
+        height: 100%;
+        background-color: red;
+    }
+}
+
+</style>

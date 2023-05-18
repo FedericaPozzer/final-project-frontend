@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import AppHome from '../pages/HomePage.vue'
+import AppHome from '../pages/Home.vue'
 import Restaurant from '../pages/Restaurant.vue'
-import Cart from '../components/Cart.vue'
+import Cart from '../pages/CartPage.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -13,15 +13,15 @@ const router = createRouter({
             component:AppHome,
         },
         {
-            path: '/restaurants/:id',
-            name: 'restaurant-detail',
-            component: Restaurant,
+            path:'/restaurant/:id',
+            name:'Restaurant',
+            component:Restaurant,
         },
         {
-            path: '/cart',
-            name: 'cart',
-            component: Cart,
-        },
+            path:'/cart',
+            name:'Cart',
+            component:Cart,
+        }
     ]
 })
 

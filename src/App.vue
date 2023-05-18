@@ -1,20 +1,38 @@
 <script>
-import navbar from './components/navbar.vue'
+import Navbar from './components/navbar.vue'
+import Cart from './components/CartComponent.vue'
 export default{
   components: {
-    navbar
+    Navbar,
+    Cart
   }
 }
 </script>
 
 <template>
-  <navbar />
+
+  <Navbar />
+
+  <!-- Contenuto variabile -->
   <div class="container">
     <router-view></router-view>
   </div>
+
+  <a href="/cart">
+    <Cart />
+  </a>
   
 </template>
 
-<style scoped>
+<style lang="scss">
+:root{
+  --bg-color: white;
+}
+
+#app{
+  background-color: var(--bg-color);
+  height: 100vh;
+}
+
 
 </style>
