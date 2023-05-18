@@ -34,7 +34,9 @@ export default {
             </h4>
         </div>
     </div>
-    <DishHover v-if="dishHover" :dish="dish" @close-hover="dishHover = 0"/>
+    <Transition>
+        <DishHover v-if="dishHover" :dish="dish" @close-hover="dishHover = 0"/>
+    </Transition>
 </template>
 
 <style lang="scss" scoped>
@@ -52,5 +54,24 @@ h5{
     display: flex;
     flex-direction: column;
     border-top: 1px solid black;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.5s ease, opacity .5s ease-in;
+}
+
+.v-enter-from {
+    opacity: 0;
+    transform: translateY(100%);
+    
+}
+.v-enter-to {
+    opacity: 1;
+    transform: translateY(0%);
+}
+.v-leave-to {
+    opacity: 0;
+    transform: translateY(100%);
 }
 </style>

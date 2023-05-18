@@ -10,11 +10,23 @@ export default{
     props: {
         dish: Object
     },
+    methods:{
+        handleClosure(handle)
+        {
+         if(handle == 1)
+         {
+            this.$emit('closeHover')
+         }
+         else{
+            return
+         }    
+        }
+    }
 }
 </script>
 <template>
-    @click="$emit('closeHover')"
     <div class="dish-overlay">
+        <div class="overlay" @click="$emit('closeHover')"></div>
         <div class="order-dish">
             <div class="d-flex justify-content-center m-4">
                 <h2>
@@ -64,7 +76,11 @@ h4{
     background-color: rgba($color: black, $alpha: .3);
     z-index: 2;
     display: flex;
-    align-items: end;
+    flex-direction: column;
+    .overlay{
+        height: 40vh;
+        width: 100%;
+    }
     .order-dish{
         z-index: 3;
 
