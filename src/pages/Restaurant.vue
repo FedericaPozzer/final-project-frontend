@@ -13,7 +13,10 @@ export default{
 <template>
 
     <Jumbotron />
-    <DishesList />
+    <div class="container">
+        <DishesList />
+    </div>
+    
     
 
 </template>
