@@ -13,7 +13,7 @@
 <template>
     <!-- Box -->
     <div class="type">
-
+        Tipo
         <!-- TODO -->
 
     </div>
