@@ -9,8 +9,8 @@
 
 <template>
     <div class="cart-container">
-        <div class="cart-backdrop"></div>
-        <div class="cart">
+        <div class="cart-backdrop" @click="$emit('cartClose')"></div>
+        <div class="cart" @click="$emit('cartExpanded')">
             carrello
         
             <!-- TODO -->
