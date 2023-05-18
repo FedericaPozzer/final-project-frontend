@@ -45,12 +45,18 @@ export default{
     --bg-primary-color: orange;
     --bg-color: white;
 
+    --backdrop-opacity: .3;
+
   //
   //Spaziature
   //
 
     //Altezza Navbar
     --navbar-height: 10vh;
+
+    //Altezza Jumbotron
+    --home-jumbo-height: 30vh;
+    --restaurant-jumbo-height: 30vh;
 
     
     //Altezza componente 'Cerca' quando aperto

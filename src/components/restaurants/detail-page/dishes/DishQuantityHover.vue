@@ -38,7 +38,7 @@
         width: 100vw;
         height: calc(100vh - var(--quantity-height));
         background-color: black;
-        opacity: .5;
+        opacity: var(--backdrop-opacity);
     }
     .quantity{
         height: var(--quantity-height);

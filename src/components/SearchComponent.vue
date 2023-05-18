@@ -44,7 +44,7 @@
         height: calc(100vh - var(--search-height));
         width: 100%;
         background-color: black;
-        opacity: .4;
+        opacity: var(--backdrop-opacity);
     }
 }
 </style>

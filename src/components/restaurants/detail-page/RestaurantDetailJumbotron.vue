@@ -17,7 +17,7 @@
 <style lang="scss" scoped>
 .jumbo{
     width: 100%;
-    height: 30vh;
+    height: var(--restaurant-jumbo-height);
     background-color: var(--bg-primary-color);
     display: flex;
     justify-content: center;

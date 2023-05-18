@@ -40,7 +40,7 @@
     width: var(--cartComponent-desktop-height);
     height: 10vh;
     border-radius: 50%;
-    background-color: yellow;
+    background-color: var(--bg-primary-color);
     margin: 2rem;
     bottom: 0;
     right: 0;
