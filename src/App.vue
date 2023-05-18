@@ -1,5 +1,5 @@
 <script>
-import Navbar from './components/navbar.vue'
+import Navbar from './components/navbar/navbar.vue'
 import Cart from './components/CartComponent.vue'
 export default{
   components: {
@@ -14,9 +14,7 @@ export default{
   <Navbar />
 
   <!-- Contenuto variabile -->
-  <div class="container">
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 
   <a href="/cart">
     <Cart />

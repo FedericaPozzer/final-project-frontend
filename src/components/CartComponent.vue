@@ -4,11 +4,10 @@
 </script>
 <template>
     <div class="cart-bar d-md-none">
-    
+        Carrello
     </div>
-
     <div class="cart-round d-none d-md-flex">
-
+        Carrello
     </div>
 </template>
 <style>

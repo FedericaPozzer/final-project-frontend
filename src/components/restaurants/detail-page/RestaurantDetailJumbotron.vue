@@ -3,6 +3,7 @@
 
 <template>
 <div class="jumbo">
+    Ristorante
 </div>
 </template>
 
@@ -10,6 +11,9 @@
 .jumbo{
     width: 100%;
     height: 30vh;
-    background-color: yellow;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

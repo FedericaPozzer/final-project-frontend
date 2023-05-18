@@ -11,6 +11,6 @@
 .type {
     height: 100%;
     aspect-ratio: 1 / 1;
-    background-color: green;
+    border: 2px dotted black;
 }
 </style>

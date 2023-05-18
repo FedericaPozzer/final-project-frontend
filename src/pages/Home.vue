@@ -31,7 +31,9 @@ export default{
 <Types />
 
 <!-- Ristoranti -->
-<RestaurantsList />
+<div class="container">
+  <RestaurantsList />
+</div>
 
 </template>
 

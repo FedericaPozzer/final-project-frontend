@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <div class="categories-container">
+    <div class="types-container">
         <Type />
         <Type />
         <Type />
@@ -20,11 +20,13 @@ export default {
 </template>
 
 <style>
-.categories-container{
+.types-container{
     display: flex;
+    justify-content: space-between;
+    padding: 8px;
     gap: 1rem;
     overflow-x: scroll;
     height: 15vh;
-    background-color: yellow;
+    background-color: orange;
 }
 </style>

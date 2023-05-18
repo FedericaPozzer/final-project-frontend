@@ -1,9 +1,15 @@
 <!-- Navbar -->
 
 <script>
+import Lens from './Lens.vue'
+export default{
+    components: {
+        Lens
+    }
+}
 </script>
 <template>
-    <header class="d-flex">
+    <header class="d-flex align-items-center">
 
         <!-- SX -->
         <div class="logo">
@@ -19,7 +25,7 @@
         <div class="d-flex justify-content-end w-100 gap-2">
             <!-- Searchbar / Lens -->
             <div>
-                Lens
+                <Lens />
             </div>
             <!-- Redirect to Backend -->
             <div>
@@ -31,12 +37,13 @@
 </template>
 <style lang="scss" scoped>
 header{
+    position: fixed;
+    z-index: 10;
     height: 10vh;
     width: 100%;
-    background-color: green;
     .logo{
-        width: 30%;
-        height: 100%;
+        width: 20%;
+        height: 80%;
         background-color: red;
     }
 }
