@@ -9,7 +9,7 @@
 
 <template>
     <div class="cart-container">
-        <div class="cart-backdrop" @click="$emit('close')"></div>
+        <div class="cart-backdrop"></div>
         <div class="cart">
             carrello
         
