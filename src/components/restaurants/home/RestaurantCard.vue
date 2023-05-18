@@ -1,10 +1,14 @@
+<!-- Card del ristorante nella schermata Home -->
 <script>
 
 </script>
 
 <template>
+    <!-- Card -->
     <div class="restaurant">
         Ristorante
+
+        <!-- TODO: immagine, nome, tipi -->
     </div>
 </template>
 <style>

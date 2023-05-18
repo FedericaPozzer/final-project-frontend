@@ -1,23 +1,40 @@
+<!-- Riga piatto nella pagina Ristorante -->
+
 <script>
+
+/* Importo il componente per scegliere la quantità */
 import DishQuantityHover from './DishQuantityHover.vue'
+
 export default {
     data(){
         return{
+            /* Variabile per aprire o chiudere il componente quantità */
             isOpen: 0
         }
     },
     components: {
+        /* Componente per scegliere la quantità */
         DishQuantityHover
     }
 }
 </script>
 
 <template>
-    <div class="dish" @click="isOpen = 1">
+
+    <!-- Riga piatto -->
+    <!-- Quando viene cliccata apre il componente per scegliere la quantità -->
+
+    <div class="dish" 
+    @click="isOpen = 1"
+    >
+
         Piatto
+        <!-- TODO: immagine, nome piatto, descrizione, prezzo -->
+
     </div>
 
-    <DishQuantityHover v-show="isOpen" />
+    <!-- Componente per scegliere la quantità del piatto -->
+    <DishQuantityHover v-show="isOpen" @close="isOpen = 0" />
 
 </template>
 

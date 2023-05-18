@@ -1,8 +1,15 @@
+<!-- COMPONENTE PRINCIPALE DELIVEBOO -->
+
 <script>
+
+/* Importo l'Header/Navbar e il componente'Carrello' */
 import Navbar from './components/navbar/navbar.vue'
 import Cart from './components/CartComponent.vue'
+
+
 export default{
   components: {
+    /* Importo i componenti */
     Navbar,
     Cart
   }
@@ -11,11 +18,15 @@ export default{
 
 <template>
 
+  <!-- Navbar/Header -->
   <Navbar />
 
-  <!-- Contenuto variabile -->
+  <!-- Contenuto variabile in base alla rotta in cui si è -->
   <router-view></router-view>
 
+  <!-- Componente 'Carrello', al click apre la visualizzazione del carrelo. -->
+
+  <!-- TODO: ?? Anche carrello componente fixed e non rotta -->
   <a href="/cart">
     <Cart />
   </a>
@@ -23,13 +34,46 @@ export default{
 </template>
 
 <style lang="scss">
+
+// VARIABILI GLOBALI CSS
 :root{
-  --bg-color: white;
+
+  //
+  //Colori
+  //
+    --text-color: black;
+    --bg-primary-color: orange;
+    --bg-color: white;
+
+  //
+  //Spaziature
+  //
+
+    //Altezza Navbar
+    --navbar-height: 10vh;
+
+    
+    //Altezza componente 'Cerca' quando aperto
+    --search-height: 60vh;
+
+    //Altezza componente 'Quantità' di Piatto quando aperto
+    --quantity-height: 60vh;
+
+
+    //Altezza componente Carrello mobile
+    --cartComponent-mobile-height: 15vh;
+
+    //Altezza/Larghezza componente Carrello desktop
+    --cartComponent-desktop-height: 10vh;
 }
 
 #app{
   background-color: var(--bg-color);
   height: 100vh;
+  color: var(--text-color);
+  a{
+    color: var(--text-color);
+  }
 }
 
 

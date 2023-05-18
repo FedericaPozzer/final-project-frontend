@@ -22,6 +22,9 @@ const router = createRouter({
             name:'Cart',
             component:Cart,
         }
+
+        /* TODO: ROTTA PAGAMENTI */
+
     ]
 })
 

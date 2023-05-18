@@ -9,6 +9,7 @@ export default{
 }
 </script>
 <template>
+    <!-- Header -->
     <header class="d-flex align-items-center">
 
         <!-- SX -->
@@ -23,11 +24,11 @@ export default{
         
         <!-- DX -->
         <div class="d-flex justify-content-end w-100 gap-2">
-            <!-- Searchbar / Lens -->
+            <!-- Icona ricerca (componente Lens) che al click fa vedere Search -->
             <div>
                 <Lens />
             </div>
-            <!-- Redirect to Backend -->
+            <!-- Redirect al Backend -->
             <div>
                 Link
             </div>
@@ -39,7 +40,7 @@ export default{
 header{
     position: fixed;
     z-index: 10;
-    height: 10vh;
+    height: var(--navbar-height);
     width: 100%;
     .logo{
         width: 20%;
