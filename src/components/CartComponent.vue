@@ -36,6 +36,7 @@
     <!-- Schermata carrello desktop -->
     <div class="cart-round d-none d-md-flex" @click="cartExpanded = 1">
         Carrello
+        <CartPage v-if="cartExpanded" @close="cartExpanded = 0"/>
     </div>
     
 </template>
