@@ -29,11 +29,18 @@ export default{
 <template>
     <div class="cart">
         <button class="btn " @click="toggleCart()">
-            Carrello
+            <i class="fa-solid fa-cart-shopping position-relative">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {{ store.nmbOfDishes }}
+                </span>
+            </i>
+            <span class="price">
+                {{ store.totalPrice.toFixed(2) }}€
+            </span>
         </button>
         <div class="cart-popover" :class="{ 'd-none' : !isVisible }">
             <div class="d-flex justify-content-between align-items-center">
-                <h4>Carrello</h4>
+                <h4>Carrello</h4> 
                 <button class="btn" @click="isVisible = 0">
                     x
                 </button>
@@ -69,8 +76,19 @@ export default{
 
 <style lang="scss">
 .cart {
+    i {
+        font-size: 2rem;
+        span {
+            font-size: 1rem;
+        }
+    }
+    .price{
+        font-size: 2rem;
+        margin-left: 2rem;
+    }
     .cart-popover{
         position: fixed;
+        z-index: 3;
         top: 0;
         right: 0;
         bottom: 0;
@@ -79,7 +97,7 @@ export default{
         flex-direction: column;
         gap: 1rem;
         padding: 1rem;
-        width: 30vw;
+        width: 100%;
     }
 }
 </style>

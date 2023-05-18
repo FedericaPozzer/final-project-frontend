@@ -9,7 +9,7 @@ import App from './App.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-let pinia = createPinia()
+const pinia = createPinia()
 
 createApp(App)
 .use(pinia)

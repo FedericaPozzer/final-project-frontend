@@ -6,7 +6,8 @@ export const useCartStore = defineStore("cart", {
   state: () => {
     return { 
       dishes: useLocalStorage('dishes', []),
-      totalPrice: useLocalStorage('price', 0)
+      totalPrice: useLocalStorage('price', 0),
+      nmbOfDishes: useLocalStorage('nmbOfDishes', 0)
      };
   },
   actions: {
@@ -42,6 +43,7 @@ export const useCartStore = defineStore("cart", {
     },
     deleteCart(){
         this.dishes = []
+        this.nmbOfDishes = 0
         this.totalPrice = 0
     },
     minusOne(dish){
@@ -80,6 +82,15 @@ export const useCartStore = defineStore("cart", {
                     this.totalPrice += dish.price
                 }
             }
+    },
+    addToOrder(dish, quantity)
+    {
+        dish['quantity'] = quantity
+        this.dishes.push(dish);
+        this.nmbOfDishes += quantity
+        for(let i = 0; i < quantity; i++){
+            this.totalPrice += dish['price']
+        }
     }
   },
   getters: {

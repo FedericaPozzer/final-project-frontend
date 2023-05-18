@@ -1,6 +1,5 @@
 <script>
 // import MyComponent from "./components/MyComponent.vue";
-import Cart from './Cart.vue'
 
 export default {
   data() {
@@ -9,7 +8,6 @@ export default {
     }
   },
   components: {
-    Cart,
   },
 };
 </script>
@@ -29,7 +27,6 @@ export default {
                 </ul>
 
                 <button class="btn btn-primary">Diventa Partner</button>
-                <Cart />
             </div>
         </div>
     </nav>

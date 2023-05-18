@@ -1,9 +1,11 @@
 <script>
 import axios from 'axios'
 import { useCartStore } from "../stores/cart"
+import DishComponent from "../components/DishComponent.vue"
+import RestaurantCart from "../components/RestaurantCartComponent.vue"
 
 export default{
-    name:'Homepage',
+    name:'Restaurant',
     data(){
       return {
         store: useCartStore(), //initialize the store
@@ -18,18 +20,24 @@ export default{
         .then((response)=> this.restaurant = response.data)
     },
     methods: {
+    },
+    components: {
+        DishComponent,
+        RestaurantCart
     }
 }
 
 </script>
 <template>
-    {{ restaurant.name }} <br>
-    {{ restaurant.address }} <br>
-    {{ restaurant.phone_number }} <br>
-    <img :src="restaurant.image" alt="">
+    <img :src="restaurant.image" alt="" class="img-fluid">
+    <h2>
+        {{ restaurant.name }} <br>
+    </h2>
+    <h5>
+        {{ restaurant.address }} <br>
+    </h5>
     <div v-for="dish in restaurant.dishes">
-        {{ dish.name }}
-        {{ dish.price }}
-        <span @click="store.addDish(dish)">Aggiungi al carrello</span>
+        <DishComponent :dish="dish"/>
     </div>
+    <RestaurantCart />
 </template>
