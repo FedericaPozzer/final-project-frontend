@@ -6,9 +6,11 @@ export default {
     return {
       title: "Hello world"
     }
-  },
-  components: {
-  },
+  }
+
+  // components: {
+  //   MyComponent,
+  // },
 };
 </script>
 
@@ -24,7 +26,20 @@ export default {
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                    <a class="nav-link">Tipologie</a>
+                    </li>
                 </ul>
+
+                <form class="d-flex me-auto" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Cerca un ristorante/piatto" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Cerca</button>
+                </form>
 
                 <button class="btn btn-primary">Diventa Partner</button>
             </div>
