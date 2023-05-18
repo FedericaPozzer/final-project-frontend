@@ -8,22 +8,21 @@
 </script>
 
 <template>
-
-<div class="cart">
-    carrello
-
-    <!-- TODO -->
-    <!-- Lista dei piatti nel carrello !!creare componenti Lista e Piatto -->
-
-    <!-- In fondo mobile/desktop non lo so tasto che reindirizza alla pagina 'pagamento'  -->
-
-</div>
+    <div class="cart">
+        carrello
+    
+        <!-- TODO -->
+        <!-- Lista dei piatti nel carrello !!creare componenti Lista e Piatto -->
+    
+        <!-- In fondo mobile/desktop non lo so tasto che reindirizza alla pagina 'pagamento'  -->
+    </div>
 </template>
 <style>
 .cart{
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     position: fixed;
+    bottom: 0;
     background-color: var(--bg-color);
     display: flex;
     justify-content: center;

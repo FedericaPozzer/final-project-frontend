@@ -4,6 +4,11 @@
 /* Importo il componente Search */
 import Search from '../SearchComponent.vue'
 export default{
+    watch: {
+    $route(newVal, oldVal) {
+      this.expanded = newVal.meta && newVal.meta.expanded;
+    }
+    },
     data(){
         return{
             /* Variabile per aprire o chiudere il componente Search */
@@ -27,8 +32,13 @@ export default{
     @click="expanded = 1" 
     ></i>
 
+    
     <!-- Componente Search -->
-    <Search v-show="expanded" @close="expanded = 0"/>
+    
+    <div v-if="expanded">
+        <router-view></router-view>
+        <Search v-show="expanded" @close="expanded = 0"/>
+    </div>
 </template>
 
 <style lang="scss">
