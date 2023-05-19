@@ -1,7 +1,13 @@
 <!-- Jumbotron che mostra le informazioni del ristorante nella schermata Ristorante  -->
-
 <script>
-export default{
+    import {useEndpointStore} from "../../../stores/endpoint.js"
+
+    export default {
+        data() {
+        return {
+        endpoint: useEndpointStore(),
+        }
+    },
     props:{
         restaurant: Object
     }
@@ -12,9 +18,10 @@ export default{
 <!-- Jumbotron -->
 <div class="jumbo">
 
-    {{restaurant.name}}
-
-    <!-- TODO -->
+    <h2 class="me-2 me-md-5 name">{{ restaurant.name }}</h2>
+    <div class="img-container">
+        <img :src="endpoint.endpoint + restaurant.image" class="" alt="img">
+    </div>
 
 </div>
 </template>
@@ -27,5 +34,16 @@ export default{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .name {
+        font-size: 100px;
+    }
+
+    img {
+        height: 25vh;
+        width: 25vh;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 }
 </style>
