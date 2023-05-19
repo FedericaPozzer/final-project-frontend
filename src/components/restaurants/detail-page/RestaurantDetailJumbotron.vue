@@ -37,6 +37,7 @@
 
     .name {
         font-size: 100px;
+        color: var(--bg-secondary-color)
     }
 
     img {
