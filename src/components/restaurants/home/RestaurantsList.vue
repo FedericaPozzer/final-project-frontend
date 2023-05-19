@@ -31,7 +31,7 @@ export default {
     <!-- Container Bootstrap per margini laterali -->
     <div class="container">
         <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
-        <div class="row row-cols-1 row-cols-md-2 mt-1">
+        <div class="row row-cols-1 row-cols-md-2 mt-1 gy-2">
             <!-- Card Ristorante -->
             <RestaurantCard class="col" v-for="restaurant in restaurants" :restaurant="restaurants"/>
         </div>
