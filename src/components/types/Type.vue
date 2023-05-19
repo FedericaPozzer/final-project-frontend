@@ -21,7 +21,7 @@
     <div class="type">
         <div class="box">
             <!-- <img width="80" height="80" src="https://img.icons8.com/plasticine/100/hamburger.png" alt="hamburger"/> -->
-            <!-- {{ type.name }} -->
+            {{ type.name }}
             <!-- TODO -->
         </div>
 

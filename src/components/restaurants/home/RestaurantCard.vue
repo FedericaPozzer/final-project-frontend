@@ -10,12 +10,14 @@ export default {
 
 <template>
     <!-- Card -->
-    <div class="restaurant">
-        {{ restaurant.name }}
-
-        <!-- TODO: immagine, nome, tipi -->
-    </div>
-</template>
+    <a :href="'/restaurants/' + restaurant.id">
+        <div class="restaurant">
+            {{ restaurant.name }}
+    
+            <!-- TODO: immagine, nome, tipi -->
+        </div>
+    </a>
+</template> 
 <style>
 .restaurant{
     height: 15vh;
