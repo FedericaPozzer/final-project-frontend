@@ -1,12 +1,17 @@
 <!-- Card del ristorante nella schermata Home -->
 <script>
+export default {
+    props: {
+        restaurant: Object,
+    }
+}
 
 </script>
 
 <template>
     <!-- Card -->
     <div class="restaurant">
-        Ristorante
+        {{ restaurant.name }}
 
         <!-- TODO: immagine, nome, tipi -->
     </div>
