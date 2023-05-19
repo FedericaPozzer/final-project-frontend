@@ -38,17 +38,17 @@
 
 <style>
 .type {
-    height: 100%;
+    min-width: 90px;
+    max-width: 90px;
+    aspect-ratio: 3 / 1;
     background-color: var(--bg-secondary-color);
     border-radius: 40px;
-    padding: 5px;
+    padding: 7px;
     flex-grow: 1;
-    min-width: 85px;
-    max-width: 85px;
 }
 
 .box {
-    height: 60%;
+    height: 60px;
     aspect-ratio: 1 / 1;
     margin: auto;
     background-color: white;

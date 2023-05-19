@@ -40,7 +40,6 @@ export default {
     padding: 8px 0;
     gap: 1rem;
     overflow-x: scroll;
-    height: 20vh;
     background-color: var(--bg-primary-color);
 }
 </style>
