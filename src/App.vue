@@ -3,7 +3,7 @@
 <script>
 
 /* Importo l'Header/Navbar e il componente'Carrello' */
-import Navbar from './components/navbar/navbar.vue'
+import Navbar from './components/navbar/Navbar.vue'
 import Cart from './components/CartComponent.vue'
 import CartPage from './pages/CartPage.vue'
 
@@ -40,7 +40,7 @@ export default{
   //Colori
   //
     --text-color: black;
-    --bg-primary-color: orange;
+    --bg-primary-color: #ffc032;
     --bg-color: white;
     --bg-secondary-color: #ee6a33;
 
