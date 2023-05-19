@@ -12,6 +12,9 @@ export default {
             isOpen: 0
         }
     },
+    props:{
+        dish: Object
+    },
     components: {
         /* Componente per scegliere la quantità */
         DishQuantityHover
@@ -28,7 +31,7 @@ export default {
     @click="isOpen = 1"
     >
 
-        Piatto
+        {{dish.name}}
         <!-- TODO: immagine, nome piatto, descrizione, prezzo -->
 
     </div>

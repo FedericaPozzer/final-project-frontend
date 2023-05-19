@@ -1,13 +1,18 @@
 <!-- Jumbotron che mostra le informazioni del ristorante nella schermata Ristorante  -->
 
 <script>
+export default{
+    props:{
+        restaurant: Object
+    }
+}
 </script>
 
 <template>
 <!-- Jumbotron -->
 <div class="jumbo">
 
-    Ristorante
+    {{restaurant.name}}
 
     <!-- TODO -->
 
