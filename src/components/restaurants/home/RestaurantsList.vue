@@ -33,8 +33,7 @@ export default {
         <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
         <div class="row row-cols-1 row-cols-md-2 mt-1">
             <!-- Card Ristorante -->
-            
-            <RestaurantCard class="col" v-for="restaurant in restaurants" :restaurant="restaurant"/>
+            <RestaurantCard class="col" v-for="restaurant in restaurants" :restaurant="restaurants"/>
         </div>
     </div>
 </template>
