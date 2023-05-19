@@ -34,12 +34,12 @@ export default{
             <!-- DX -->
             <div class="col-4 col-md-8 d-flex justify-content-end align-items-center">
                 <!-- Icona ricerca (componente Lens) che al click fa vedere Search -->
-                <div>
+                <div class="fs-4">
                     <Lens />
                 </div>
                 <!-- Redirect al Backend -->
-                <div class="ms-3">
-                    <button class="btn btn-outline-dark" rel="tooltip" title="Area Ristoratori">
+                <div class="ms-4">
+                    <button class="btn btn-outline-dark" id="btn-color" rel="tooltip" title="Area Ristoratori">
                         <a :href="endpoint.endpoint" class="text-decoration-none">
                             Area Ristoratori
                         </a>
@@ -58,13 +58,16 @@ export default{
     position: fixed;
     z-index: 10;
     height: var(--navbar-height);
+
 }
 
 .header-bar {
-    // debug
-    // background-color: pink;
+    background-color: var(--bg-primary-color);
 
-    background-color: var(--bg-primary-color)
+    #btn-color:hover {
+        background-color: var(--bg-secondary-color);
+        border-color: var(--bg-secondary-color);
+    }
 }
 
 </style>
