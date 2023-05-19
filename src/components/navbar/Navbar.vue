@@ -51,7 +51,7 @@ export default{
     // debug
     // background-color: pink;
 
-    background-color: #ffa500;
+    background-color: var(--bg-primary-color)
 }
 
 </style>
