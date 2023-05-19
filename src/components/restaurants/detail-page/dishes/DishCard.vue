@@ -4,12 +4,16 @@
 
 /* Importo il componente per scegliere la quantità */
 import DishQuantityHover from './DishQuantityHover.vue'
+// importo il componente che possiede il prefisso dell'url
+
+import {useEndpointStore} from "../../../../stores/endpoint.js"
 
 export default {
     data(){
         return{
             /* Variabile per aprire o chiudere il componente quantità */
-            isOpen: 0
+            isOpen: 0,
+            endpoint: useEndpointStore(),
         }
     },
     props:{
@@ -27,13 +31,28 @@ export default {
     <!-- Riga piatto -->
     <!-- Quando viene cliccata apre il componente per scegliere la quantità -->
 
-    <div class="dish" 
-    @click="isOpen = 1"
-    >
-
-        {{dish.name}}
-        <!-- TODO: immagine, nome piatto, descrizione, prezzo -->
-
+  
+    <!-- TODO: immagine, nome piatto, descrizione, prezzo -->    
+        
+    <div class="col-12 col-lg-6" @click="isOpen = 1">
+        
+            <div class="card">
+                <div class="row">
+                    <div class="col-4 image-container">
+                     <img :src="endpoint.endpoint + dish.image" class="rounded-start img-fluid" alt="img">
+                    </div>
+                
+                    <div class="col-8">
+                        
+                        <h5 class="card-title mt-md-1 fs-lg-4">{{ dish.name }}</h5>
+                        <span class="card-title mt-md-1 text-secondary fs-lg-5">{{ dish.description }}</span>
+                        <p class="card-title mt-md-1 fs-lg-5">&euro; {{ dish.price }}</p> 
+                        
+                    </div>
+                        
+                </div>
+            </div>
+        
     </div>
 
     <!-- Componente per scegliere la quantità del piatto -->
@@ -41,10 +60,9 @@ export default {
 
 </template>
 
-<style>
-    .dish{
-        height: 10vh;
-        border: 2px dotted black;
+<style lang="scss">
+    img{
+        width: 100%;
     }
 
 </style>
