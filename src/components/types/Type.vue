@@ -20,10 +20,12 @@
     <!-- Box -->
     <div class="type">
         <div class="box">
-            <!-- <img width="80" height="80" src="https://img.icons8.com/plasticine/100/hamburger.png" alt="hamburger"/> -->
-            <!-- {{ type.name }} -->
-            <!-- TODO -->
+            <img width="50" height="50" :src="type.image"/>
         </div>
+        
+        <p class="text">
+            {{ type.name }}
+        </p>
 
         
 
@@ -36,8 +38,7 @@
 .type {
     height: 100%;
     width: 6%;
-    
-    border: 2px dotted black;
+    background-color: #ee6a33;
     border-radius: 40px;
     padding: 5px;
 }
@@ -46,8 +47,16 @@
     height: 60%;
     aspect-ratio: 1 / 1;
     margin: auto;
-    background-color: red;
+    background-color: white;
     border-radius: 50%;
+    text-align: center;
+    padding: 5px;
+}
+
+.text {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 6px;
 }
 
 
