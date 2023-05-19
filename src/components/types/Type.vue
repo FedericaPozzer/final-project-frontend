@@ -18,7 +18,7 @@
 
 <template>
     <!-- Box -->
-    <div class="type">
+    <button class="type">
         <div class="box">
             <!-- <img width="80" height="80" src="https://img.icons8.com/plasticine/100/hamburger.png" alt="hamburger"/> -->
             <!-- TODO -->
@@ -29,11 +29,13 @@
             {{ type.name }}
         </p>
 
+    
+
         
 
 
 
-    </div>
+    </button>
 </template>
 
 <style>
@@ -41,10 +43,16 @@
     min-width: 90px;
     max-width: 90px;
     aspect-ratio: 3 / 1;
-    background-color: var(--bg-secondary-color);
+    background: none;
+    border: none;
     border-radius: 40px;
     padding: 7px;
     flex-grow: 1;
+    background-color: var(--bg-secondary-color);
+}
+
+.type:hover {
+    background-color: #d84f15;
 }
 
 .box {
