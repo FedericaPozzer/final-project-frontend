@@ -3,7 +3,7 @@
 import { useEndpointStore } from "../../stores/endpoint.js"
 import Lens from './Lens.vue'
 
-export default{
+export default {
     data() {
         return {
             endpoint: useEndpointStore(),
@@ -18,7 +18,7 @@ export default{
 
 <template>
     <!-- Header -->
-    <header class="d-flex align-items-center justify-content-between">
+    <header class="header-bar p-2">
 
         <div class="row justify-content-between align-items-center">
             <!-- SX -->
@@ -30,7 +30,7 @@ export default{
                     </a>
                 </div>
             </div>
-        
+
             <!-- DX -->
             <div class="col-4 col-md-8 d-flex justify-content-end align-items-center">
                 <!-- Icona ricerca (componente Lens) che al click fa vedere Search -->
@@ -47,7 +47,6 @@ export default{
                 </div>
             </div>
         </div>
-        
 
     </header>
 </template>
@@ -55,23 +54,19 @@ export default{
 
 
 <style lang="scss" scoped>
-.header{
+.header {
     position: fixed;
     z-index: 10;
     height: var(--navbar-height);
 
 }
 
-header{
-    background: var(--bg-primary-color);
-    position: fixed;
-    z-index: 10;
-    height: var(--navbar-height);
-    width: 100%;
-    .logo{
-        width: 20%;
-        margin: 20px;
+.header-bar {
+    background-color: var(--bg-primary-color);
+
+    #btn-color:hover {
+        background-color: var(--bg-secondary-color);
+        border-color: var(--bg-secondary-color);
     }
 }
-
 </style>
