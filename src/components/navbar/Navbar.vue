@@ -18,7 +18,7 @@ export default{
 
 <template>
     <!-- Header -->
-    <header class="header-bar p-2">
+    <header class="d-flex align-items-center justify-content-between">
 
         <div class="row justify-content-between align-items-center">
             <!-- SX -->
@@ -47,6 +47,7 @@ export default{
                 </div>
             </div>
         </div>
+        
 
     </header>
 </template>
@@ -61,12 +62,15 @@ export default{
 
 }
 
-.header-bar {
-    background-color: var(--bg-primary-color);
-
-    #btn-color:hover {
-        background-color: var(--bg-secondary-color);
-        border-color: var(--bg-secondary-color);
+header{
+    background: var(--bg-primary-color);
+    position: fixed;
+    z-index: 10;
+    height: var(--navbar-height);
+    width: 100%;
+    .logo{
+        width: 20%;
+        margin: 20px;
     }
 }
 
