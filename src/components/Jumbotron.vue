@@ -95,7 +95,6 @@ export default{
     background-color: var(--bg-primary-color);
     display: grid;
     grid-template-columns: 40vw 60vw;
-    padding-top: var(--navbar-height);
     min-height: var(--home-jumbo-height);
     font-family: 'Bebas Neue', sans-serif;
     .image-container{
