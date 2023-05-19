@@ -18,8 +18,8 @@ export default {
 
 <template>
     <!-- Card -->
-    <a :href="'/restaurants/' + restaurant.id">
-        <div class="card-group">
+    <div class="col-12 col-lg-6">
+            <a :href="'/restaurants/' + restaurant.id">
             <div class="card">
                 <div class="row">
                     <div class="col-4 image-container">
@@ -39,8 +39,8 @@ export default {
                 </div>
             </div>
             
+        </a>
         </div>
-    </a>
     </template> 
     <style scoped>
     a{

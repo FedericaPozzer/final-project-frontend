@@ -35,6 +35,7 @@ export default{
         <!-- Container Piatti -->
         <DishesList :dishes="restaurant.dishes" />
     </div>
+
     
     
 
