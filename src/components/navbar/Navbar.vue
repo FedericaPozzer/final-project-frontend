@@ -1,13 +1,21 @@
 <!-- Navbar -->
-
 <script>
+import { useEndpointStore } from "../../stores/endpoint.js"
 import Lens from './Lens.vue'
+
 export default{
+    data() {
+        return {
+            endpoint: useEndpointStore(),
+        }
+    },
     components: {
         Lens
     }
 }
 </script>
+
+
 <template>
     <!-- Header -->
     <header class="header-bar p-2">
@@ -31,16 +39,21 @@ export default{
                 </div>
                 <!-- Redirect al Backend -->
                 <div class="ms-3">
-                    <button class="btn btn-outline-dark" rel="tooltip" title="Area Ristoratori">Area Ristoratori</button>
+                    <button class="btn btn-outline-dark" rel="tooltip" title="Area Ristoratori">
+                        <a :href="endpoint.endpoint" class="text-decoration-none">
+                            Area Ristoratori
+                        </a>
+                    </button>
                 </div>
             </div>
         </div>
 
     </header>
 </template>
+
+
+
 <style lang="scss" scoped>
-
-
 .header{
     position: fixed;
     z-index: 10;
