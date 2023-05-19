@@ -40,7 +40,7 @@ export default{
   //Colori
   //
     --text-color: black;
-    --bg-primary-color: orange;
+    --bg-primary-color: #ffc032;
     --bg-color: white;
     --bg-secondary-color: #ee6a33;
 
