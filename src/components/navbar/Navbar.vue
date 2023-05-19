@@ -10,7 +10,7 @@ export default{
 </script>
 <template>
     <!-- Header -->
-    <header class="d-flex align-items-center">
+    <header class="d-flex align-items-center justify-content-between">
 
         <!-- SX -->
         <div class="logo">
@@ -23,7 +23,7 @@ export default{
         </div>
         
         <!-- DX -->
-        <div class="d-flex justify-content-end w-100 gap-2">
+        <div class="d-flex justify-content-end gap-2">
             <!-- Icona ricerca (componente Lens) che al click fa vedere Search -->
             <div>
                 <Lens />
@@ -38,13 +38,13 @@ export default{
 </template>
 <style lang="scss" scoped>
 header{
+    background: var(--bg-primary-color);
     position: fixed;
     z-index: 10;
     height: var(--navbar-height);
     width: 100%;
     .logo{
         width: 20%;
-        height: 80%;
         margin: 20px;
     }
 }
