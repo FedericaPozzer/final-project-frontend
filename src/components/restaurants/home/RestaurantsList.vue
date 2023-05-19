@@ -31,9 +31,9 @@ export default {
     <!-- Container Bootstrap per margini laterali -->
     <div class="container">
         <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
-        <div class="row row-cols-1 row-cols-md-2 mt-1 gy-2">
+        <div class="row row-cols-1 row-cols-lg-2 mt-1 gy-2">
             <!-- Card Ristorante -->
-            <RestaurantCard class="col" v-for="restaurant in restaurants" :restaurant="restaurant"/>
+            <RestaurantCard class="col" v-for="restaurant in restaurants" :key="restaurant.id" :restaurant="restaurant"/>
         </div>
     </div>
 </template>
