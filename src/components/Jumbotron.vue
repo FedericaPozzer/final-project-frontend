@@ -100,6 +100,7 @@ export default{
     font-family: 'Bebas Neue', sans-serif;
     .image-container{
         position: relative;
+        transform: translateX(2vw);
         .image{
             display: flex;
             justify-content: flex-end;
@@ -124,6 +125,10 @@ export default{
         justify-content: flex-start;
         align-items: center;
         font-size: 2.5rem;
+        .label{
+            font-size: 3rem;
+            color: var(--bg-secondary-color);
+        }
         @media screen and (min-width: 800px) {
             .label{
                 font-size: 6rem;
