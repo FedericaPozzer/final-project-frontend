@@ -1,10 +1,24 @@
 <!-- Riga dei tipi nella schermata Home -->
 
 <script>
-import Type from './Type.vue'
+import Type from './Type.vue';
+import axios from 'axios';
 export default {
     components: {
         Type
+    },
+
+    data() {
+        return{
+            types : []
+        }
+    },
+
+    created() {
+        axios.get('http://127.0.0.1:8000/api/types')
+        .then((response) => {
+            this.types = response.data;
+        });
     }
 }
 
@@ -13,11 +27,8 @@ export default {
 <template>
     <div class="types-container">
         <div class="container d-flex gap-3">
-            <Type />
-            <Type />
-            <Type />
-            <Type />
-            <Type />
+            <Type v-for="type in types" :type="type"/>
+        
         </div>
 
     </div>
@@ -29,7 +40,7 @@ export default {
     padding: 8px 0;
     gap: 1rem;
     overflow-x: scroll;
-    height: 15vh;
+    height: 20vh;
     background-color: var(--bg-primary-color);
 }
 </style>

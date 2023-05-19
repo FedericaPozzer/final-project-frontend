@@ -8,13 +8,26 @@
      * ristoranti deve mostrare.
       */
 
+      export default{
+        props:{
+            type:Object,
+        }
+      }
+
 </script>
 
 <template>
     <!-- Box -->
     <div class="type">
-        Tipo
-        <!-- TODO -->
+        <div class="box">
+            <!-- <img width="80" height="80" src="https://img.icons8.com/plasticine/100/hamburger.png" alt="hamburger"/> -->
+            <!-- {{ type.name }} -->
+            <!-- TODO -->
+        </div>
+
+        
+
+
 
     </div>
 </template>
@@ -22,7 +35,20 @@
 <style>
 .type {
     height: 100%;
-    aspect-ratio: 1 / 1;
+    width: 6%;
+    
     border: 2px dotted black;
+    border-radius: 40px;
+    padding: 5px;
 }
+
+.box {
+    height: 60%;
+    aspect-ratio: 1 / 1;
+    margin: auto;
+    background-color: red;
+    border-radius: 50%;
+}
+
+
 </style>
