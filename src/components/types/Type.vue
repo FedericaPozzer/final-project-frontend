@@ -37,10 +37,12 @@
 <style>
 .type {
     height: 100%;
-    width: 6%;
-    background-color: #ee6a33;
+    background-color: var(--bg-secondary-color);
     border-radius: 40px;
     padding: 5px;
+    flex-grow: 1;
+    min-width: 85px;
+    max-width: 85px;
 }
 
 .box {
@@ -57,6 +59,7 @@
     font-size: 13px;
     text-align: center;
     margin-top: 6px;
+    color: white;
 }
 
 

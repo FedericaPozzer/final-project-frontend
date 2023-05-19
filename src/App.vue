@@ -42,6 +42,7 @@ export default{
     --text-color: black;
     --bg-primary-color: orange;
     --bg-color: white;
+    --bg-secondary-color: #ee6a33;
 
     --backdrop-opacity: .3;
 
