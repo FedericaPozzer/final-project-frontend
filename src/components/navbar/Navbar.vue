@@ -17,7 +17,7 @@ export default{
             <!-- Logo con redirect homepage -->
             <div>
                 <a href="/">
-                    Logo
+                    <img src="../../assets/logo.png" alt="logo" class="img-fluid">
                 </a>
             </div>
         </div>
@@ -45,7 +45,7 @@ header{
     .logo{
         width: 20%;
         height: 80%;
-        background-color: red;
+        margin: 20px;
     }
 }
 
