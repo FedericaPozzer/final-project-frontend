@@ -105,6 +105,7 @@ export default{
             justify-content: flex-end;
             width: 100%;
             img{
+                width: auto;
                 height: var(--home-jumbo-height);
             }
         }
