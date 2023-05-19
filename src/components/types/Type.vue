@@ -42,7 +42,6 @@
 .type {
     min-width: 90px;
     max-width: 90px;
-    aspect-ratio: 3 / 1;
     background: none;
     border: none;
     border-radius: 40px;
