@@ -1,6 +1,14 @@
 <!-- Card del ristorante nella schermata Home -->
 <script>
+import {useEndpointStore} from "../../../stores/endpoint.js" 
+
 export default {
+    data() {
+        return {
+            endpoint: useEndpointStore(),
+        }
+    },
+
     props: {
         restaurant: Object,
     }
@@ -11,15 +19,10 @@ export default {
 <template>
     <!-- Card -->
     <div class="card-group">
-    
-        <!-- TODO: immagine, nome, tipi -->
-    
-        <!-- :src="`${stores.BackEndpoint}${$restaurant.image}`" -->
-        
         <div class="card">
             <div class="row">
                 <div class="col-4 image-container">
-                    <img :src="'http://127.0.0.1:8000/' + restaurant.image" class="img-fluid rounded-start" alt="img">
+                    <img :src="endpoint.endpoint + restaurant.image" class="img-fluid rounded-start" alt="img">
                 </div>
                 
                 <div class="col-8">
