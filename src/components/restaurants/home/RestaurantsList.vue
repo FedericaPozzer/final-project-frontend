@@ -2,34 +2,39 @@
 
 <script>
 /* Importo le card dei ristoranti */
+import axios from 'axios';
 import RestaurantCard from './RestaurantCard.vue'
 export default {
     components: {
         /* Componente card Ristorante */
         RestaurantCard
+    },
+
+    data() {
+        return {
+            restaurants: [],
+        }
+    },
+
+    created() {
+        axios.get("http://127.0.0.1:8000/api/restaurants")
+        .then((response) => 
+        this.restaurants = response.data
+        )
     }
 }
+
 </script>
+
+
 <template>
     <!-- Container Bootstrap per margini laterali -->
     <div class="container">
         <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
         <div class="row row-cols-1 row-cols-md-2 mt-1">
             <!-- Card Ristorante -->
-            <a href="/restaurant/1" class="p-0 m-0 col">
-                <RestaurantCard />
-            </a>
-            <RestaurantCard class="col" />
-            <RestaurantCard class="col" />
-            <RestaurantCard class="col" />
-            <RestaurantCard class="col" />
-            <RestaurantCard class="col" />
-            <RestaurantCard class="col" />
-            <RestaurantCard class="col" />
-            <RestaurantCard class="col" />
-            <RestaurantCard class="col" />
-            <RestaurantCard class="col" />
-            <RestaurantCard class="col" />
+            
+            <RestaurantCard class="col" v-for="restaurant in restaurants" :restaurant="restaurant"/>
         </div>
     </div>
 </template>
