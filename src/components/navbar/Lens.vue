@@ -18,7 +18,29 @@ export default{
     components: {
         /* Componente ricerca */
         Search
-    }
+    },
+    /* creazione di due chiamate axios distinte per ristoranti e piatti */
+
+    methods: {
+    fetchSomething(query) {
+      this.fetchRestaurants(query);
+      this.fetchDishes(query);
+    },
+    fetchRestaurants(query) {
+      axios
+        .get()
+        .then((RestaurantResponse) => {
+          ;
+        });
+    },
+    fetchDishes(query) {
+      axios
+        .get()
+        .then((DishesResponse) => {
+      });
+      console.log(Response);
+    },
+  },
 }
 
 </script>
@@ -36,7 +58,9 @@ export default{
     <!-- Componente Search -->
 
     <div v-if="expanded">
-        <Search v-show="expanded" @close="expanded = 0"/>
+        <Search @search="fetchSomething" v-show="expanded" 
+        @close="expanded = 0"/>
+        
         <router-view v-if="!expanded"></router-view>
     </div>
 </template>
