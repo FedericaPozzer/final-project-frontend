@@ -10,7 +10,8 @@ export default {
 
     data() {
         return{
-            types : []
+            types : [],
+            active: 0
         }
     },
 
@@ -25,11 +26,11 @@ export default {
 </script>
 
 <template>
-    <div class="types-container">
-        <div class="container d-flex gap-3">
+    <div class="types-container ">
+        <div class="container d-flex gap-3 justify-content-md-center">
 
             <!-- Bottone per tutte le categorie -->
-            <button class="type" @click="$emit('changeType', 'all')">
+            <button class="type" @click="$emit('changeType', 'all'), active = 0" :class="{'active' : active == 0}">
                 <div class="box">
                     <img width="48" height="48" src="https://img.icons8.com/fluency/48/street-food.png" alt="street-food"/>
                     <!-- TODO -->
@@ -41,14 +42,14 @@ export default {
             </button>
 
             <!-- Bottoni per singola categoria -->
-            <Type v-for="type in types" :type="type" @click="$emit('changeType', type.name)"/>
+            <Type v-for="type, i in types" :type="type" @click="$emit('changeType', type.name), active = i + 1" :class="{'active' : active == i + 1}"/>
         
         </div>
 
     </div>
 </template>
 
-<style>
+<style lang="scss">
 .types-container{
     display: flex;
     padding: 8px 0;
@@ -65,6 +66,12 @@ export default {
     padding: 7px;
     flex-grow: 1;
     background-color: var(--bg-secondary-color);
+    box-shadow: 1px 2px 10px var(--bg-secondary-color);
+    transition: all .1s linear;
+    &.active,&:hover{
+        box-shadow: 5px 2px 10px var(--bg-secondary-color);
+        background-color: #d84f15;
+    }
 }
 
 .type:hover {

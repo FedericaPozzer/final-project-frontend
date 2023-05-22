@@ -52,6 +52,7 @@ import {useEndpointStore} from "../../../stores/endpoint.js"
     justify-content: center;
     align-items: center;
     padding-bottom: 2rem;
+    box-shadow: 10px 0 10px var(--bg-primary-color);
 
     .name {
         color: var(--bg-secondary-color)

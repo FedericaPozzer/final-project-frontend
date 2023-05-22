@@ -66,7 +66,7 @@ export default{
 
 
     //Altezza componente Carrello mobile
-    --cartComponent-mobile-height: 15vh;
+    --cartComponent-mobile-height: 12vh;
 
     //Altezza/Larghezza componente Carrello desktop
     --cartComponent-desktop-height: 10vh;
