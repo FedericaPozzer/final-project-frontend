@@ -5,6 +5,7 @@ export default {
 };
 </script>
 
+<!-- creazione di un layover che viene mostrato fino alla fine delcaricamento -->
 <template>
   <div class="layover">
     <img class="" src="../../public/logo-loader.png" alt="logo-loader">
