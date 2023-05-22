@@ -117,12 +117,19 @@ export default {
     <!-- Container Bootstrap per margini laterali -->
     <div class="container">
          <!-- Se sto ancora ricevendo dati allora lascio il layover -->
-        <AppLoader v-if="isLoading"/>
+         <AppLoader v-if="isLoading"/>
         <input type="text" class="form-control mt-3" :placeholder="type == 'all' ? 'Cerca tra tutti i ristoranti..' : 'Cerca tra i ristoranti di tipo ' + type + '...' " v-model="queryText" @input="search(queryText, type)">
-        <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
-        <div class="row mt-2 g-3">
-            <!-- Card Ristorante -->
-            <RestaurantCard v-for="restaurant in restaurants" :key="restaurant.id" :restaurant="restaurant"/>
+        <div v-if="this.restaurants.length">
+
+            <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
+            <div class="row mt-2 g-3">
+                <!-- Card Ristorante -->
+                <RestaurantCard v-for="restaurant in restaurants" :key="restaurant.id" :restaurant="restaurant"/>
+            </div>
+    
+        </div>
+        <div v-else>
+            <h1 class=" no-match-message my-4">Nessun Risultato</h1>
         </div>
         <div class="pagination">
             <div class=""  >
@@ -141,6 +148,12 @@ export default {
 <style lang="scss" scoped>
 .container{
     margin-bottom: calc(var(--cartComponent-mobile-height));
+}
+.no-match-message{
+    font-size: 5rem;
+    -webkit-text-stroke: 1px black;
+    color: #ee6a33;
+
 }
 .restaurant-container{
     display: flex;
