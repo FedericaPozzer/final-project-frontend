@@ -38,6 +38,11 @@ export const useCartStore = defineStore("cart", {
       let totalPrice = 0
       this.dishes.forEach((dish)=> totalPrice += dish.price * dish.quantity)
       return totalPrice.toFixed(2)
+    },
+    numberOfItems(state) {
+      let numberOfItems = 0
+      this.dishes.forEach((dish)=> numberOfItems += dish.quantity)
+      return numberOfItems
     }
   },
 });

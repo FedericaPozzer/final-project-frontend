@@ -5,6 +5,7 @@
 
 <script>
     import CartPage from '../pages/CartPage.vue'
+    import { useCartStore } from '../stores/cart';
     /**
      * TODO: Link ai dati che sono nello store
     */
@@ -16,7 +17,8 @@
         },
         data(){
             return{
-                cartExpanded: 0
+                cartExpanded: 0,
+                cart: useCartStore()
             }
         },
         components: {
@@ -29,7 +31,15 @@
 
     <!-- Schermata carrello mobile -->
     <div class="cart-bar d-md-none" @click="cartExpanded == 0 ? cartExpanded = 1 : cartExpanded = 1" >
-        Carrello
+        <div class="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="numberOfItems">
+                {{cart.numberOfItems}}
+            </span>
+        </div>
+        <span class="amount">
+            {{ cart.totalPrice }}€
+        </span>
     </div>
 
     <!-- Schermata carrello desktop -->
@@ -41,7 +51,7 @@
     <CartPage v-show="cartExpanded" @close="cartExpanded = 0"/>
     
 </template>
-<style>
+<style lang="scss">
 .cart-bar{
     position: fixed;
     height: var(--cartComponent-mobile-height);
@@ -50,6 +60,31 @@
     bottom: 0;
     background-color: var(--bg-primary-color);
     border-radius: 20px 20px 0 0;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    .cart{
+        position: relative;
+        font-size: 3rem;
+        .numberOfItems{
+            font-size: 2rem;
+            background-color: var(--bg-secondary-color);
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            transform: translateX(100%);
+            border-radius: 50%;
+        }
+
+    }
+    .amount{
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
 }
 
 .cart-round{

@@ -64,6 +64,9 @@ export default{
 
 </template>
 
-<style>
+<style scoped>
+.container{
+    margin-bottom: calc(var(--cartComponent-mobile-height) + 1rem);
+}
 
 </style>
