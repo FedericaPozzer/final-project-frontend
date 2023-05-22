@@ -66,10 +66,16 @@ export default{
     <!-- Container di Bootstrap per margini laterali -->
     <div class="container">
         <!-- Se sto ancora ricevendo dati allora lascio il layover -->
+        
         <AppLoader v-if="isLoading"/>
         <input type="text" class="form-control mt-3" :placeholder="'Cerca tra i piatti di ' + restaurant.name + '...'" v-model="queryText" @input="handleSearch()">
-        <!-- Container Piatti -->
-        <DishesList :dishes="dishes" />
+        <div v-if="this.dishes.length">
+            <!-- Container Piatti -->
+            <DishesList :dishes="dishes" />
+        </div>
+        <div v-else>
+            <h1 class=" no-match-message my-4">Nessun Risultato</h1>
+        </div>
     </div>
 
     
@@ -81,5 +87,9 @@ export default{
 .container{
     margin-bottom: calc(var(--cartComponent-mobile-height) + 1rem);
 }
-
+.no-match-message{
+    font-size: 5rem;
+    -webkit-text-stroke: 1px black;
+    color: #ee6a33;
+}
 </style>
