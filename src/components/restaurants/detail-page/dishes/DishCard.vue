@@ -34,24 +34,25 @@ export default {
   
     <!-- TODO: immagine, nome piatto, descrizione, prezzo -->    
         
-    <div class="col-12 col-lg-6" @click="isOpen = 1">
-        
-            <div class="card">
-                <div class="row">
-                    <div class="col-4 image-container">
-                     <img :src="endpoint.endpoint + dish.image" class="rounded-start img-fluid" alt="img">
-                    </div>
-                
-                    <div class="col-8">
-                        
-                        <h5 class="card-title mt-md-1 fs-lg-4">{{ dish.name }}</h5>
-                        <span class="card-title mt-md-1 text-secondary fs-lg-5">{{ dish.description }}</span>
-                        <p class="card-title mt-md-1 fs-lg-5">&euro; {{ dish.price }}</p> 
-                        
-                    </div>
-                        
-                </div>
+    <div class="card" @click="isOpen = 1">
+        <div class="image">
+            <img :src="endpoint.endpoint + dish.image" class="rounded-start img-fluid" alt="img">
+        </div>
+        <div class="info">
+            <div class="name">
+                <h3>
+                    {{ dish.name }}
+                </h3>
             </div>
+            <i>
+                <h5>
+                    {{ dish.description }}
+                </h5>
+            </i>
+        </div>
+        <div class="price">
+            {{ dish.price.toFixed(2) }}&euro;
+        </div>
         
     </div>
 
@@ -60,9 +61,46 @@ export default {
 
 </template>
 
-<style lang="scss">
-    img{
+<style lang="scss" scoped>
+    .card{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding: 10px;
+        @media screen and (max-width: 768px) {
+            flex-wrap: wrap;
+        }
+        .image{
+            width: 20%;
+            @media screen and (max-width: 768px) {
+              width: 100%;
+            }
+            padding: 1rem;
+            img{
+                width: 100%;
+                @media screen and (max-width: 768px) {
+                    width: 40%;
+                    margin: 0 50%;
+                    transform: translateX(-50%);
+                  }
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    h5{
+        font-weight: 300;
+    }
+    .info{
         width: 100%;
+    }
+    .price{
+        padding: 1rem;
+        font-size: 1.5rem;
+        @media screen and (max-width: 768px) {
+            margin-left: auto;
+        }
     }
 
 </style>

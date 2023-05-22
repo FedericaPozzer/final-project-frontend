@@ -22,21 +22,22 @@ import {useEndpointStore} from "../../../stores/endpoint.js"
 <template>
 <!-- Jumbotron -->
 <div class="jumbo">
-
-    <div class="img-container">
-        <img :src="endpoint.endpoint + restaurant.image" alt="img">
-    </div>
-
-    <div class="info-box ms-2 ms-md-5">
-        <h2 class="me-md-5 name">{{ restaurant.name }}</h2>
-        <div class="d-flex flex-column flex-wrap info">
-            <!-- <div v-for="RestaurantType in restaurant.types" :key="RestaurantType.id">
-                <p class="">{{ RestaurantType.name }}</p>
-            </div> -->
-            
-            <p>{{ restaurant.address }}</p>
-            <p>Tel. {{ restaurant.phone_number }}</p>
-
+    <div class="container d-flex">
+        <div class="img-container">
+            <img :src="endpoint.endpoint + restaurant.image" alt="img">
+        </div>
+    
+        <div class="info-box ms-2 ms-md-5">
+            <h2 class="me-md-5 name">{{ restaurant.name }}</h2>
+            <div class="d-flex flex-column flex-wrap info">
+                <!-- <div v-for="RestaurantType in restaurant.types" :key="RestaurantType.id">
+                    <p class="">{{ RestaurantType.name }}</p>
+                </div> -->
+                
+                <p>{{ restaurant.address }}</p>
+                <p>Tel. {{ restaurant.phone_number }}</p>
+    
+            </div>
         </div>
     </div>
 
@@ -59,8 +60,11 @@ import {useEndpointStore} from "../../../stores/endpoint.js"
     }
 
     img {
-        height: 25vh;
+        width: 100%;
+        height: 100%;
+        max-height: 300px;
         object-fit: cover;
+        border-radius: 20px;
     }
 
     // heropatterns.com

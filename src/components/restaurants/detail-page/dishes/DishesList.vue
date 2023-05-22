@@ -18,7 +18,7 @@ export default{
 <template>
     
         
-    <div class="row mt-2 g-3">
+    <div class="dishes-container mt-2 g-3">
         <DishCard class="" v-for="dish in dishes" :dish="dish"/>
     </div>
 
@@ -26,7 +26,13 @@ export default{
 </template>
 
 <style>
+.dishes-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 20px;
 
+}
 </style>
         
         

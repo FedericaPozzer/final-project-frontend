@@ -33,7 +33,6 @@ export default {
             <button class="type" @click="$emit('changeType', 'all'), active = 0" :class="{'active' : active == 0}">
                 <div class="box">
                     <img src="https://img.icons8.com/plasticine/100/sandwich.png" alt="sandwich"/>
-                    <!-- TODO -->
                 </div>
                 
                 <p class="text">
@@ -49,7 +48,7 @@ export default {
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .types-container{
     display: flex;
     padding: 8px 0;
@@ -86,6 +85,9 @@ export default {
     border-radius: 50%;
     text-align: center;
     padding: 5px;
+    img{
+        width: 100%;
+    }
 }
 
 .text {
