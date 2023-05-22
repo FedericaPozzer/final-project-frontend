@@ -31,7 +31,7 @@ export default {
             <!-- Bottone per tutte le categorie -->
             <button class="type" @click="$emit('changeType', 'all')">
                 <div class="box">
-                    <img width="48" height="48" src="https://img.icons8.com/fluency/48/street-food.png" alt="street-food"/>
+                    <img width="100" height="100" src="https://img.icons8.com/plasticine/100/ingredients.png" alt="ingredients"/>
                     <!-- TODO -->
                 </div>
                 
