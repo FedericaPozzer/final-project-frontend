@@ -13,6 +13,16 @@ export default{
       Jumbotron,
       Types,
       RestaurantsList
+    },
+    methods:{
+      changeType(type){
+        this.type = type
+      }
+    },
+    data(){
+      return{
+        type: 'all'
+      }
     }
 }
 
@@ -24,11 +34,11 @@ export default{
 <Jumbotron />
 
 <!-- Categorie -->
-<Types />
+<Types @change-type="(type) => changeType(type)" />
 
 <!-- Ristoranti -->
 <div class="container">
-  <RestaurantsList />
+  <RestaurantsList :type="type"/>
 </div>
 
 </template>
