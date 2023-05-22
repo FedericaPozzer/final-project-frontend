@@ -3,7 +3,7 @@
 <script>
 /* Importo le card dei ristoranti */
 import axios from 'axios';
-import RestaurantCard from './RestaurantCard.vue'
+import RestaurantCard from './RestaurantCard.vue';
 export default {
     components: {
         /* Componente card Ristorante */
@@ -15,12 +15,14 @@ export default {
     data() {
         return {
             restaurants: [],
+            isLoading:false,
             queryText: '',
             data: []
         }
     },
 
     created() {
+        this.isLoading = true;
         axios.get("http://127.0.0.1:8000/api/restaurants")
         .then((response) =>{
             console.log(response)
@@ -28,6 +30,9 @@ export default {
             this.restaurants = response.data.data
         } 
         )
+        .finally(()=>{
+        this.isLoading = false;
+    });
     },
     watch: {
     '$props':{
@@ -49,6 +54,9 @@ export default {
                         this.restaurants = response.data.data
                         console.log(response)
                     }) 
+                    .finally(()=>{
+                    this.isLoading = false;
+                    });
                 }
                 else{
                     axios.get("http://127.0.0.1:8000/api/search/" + type + '/' + this.queryText)
@@ -57,6 +65,9 @@ export default {
                         this.restaurants = response.data.data
                         console.log(response)
                     })
+                    .finally(()=>{
+                    this.isLoading = false;
+                    });
                 }
             }
             else{
@@ -69,6 +80,9 @@ export default {
                         console.log(response)
                     }
                     ) 
+                    .finally(()=>{
+                    this.isLoading = false;
+                    });
                 }
                 else{
                     axios.get("http://127.0.0.1:8000/api/search/" + type + '/' + query)
@@ -77,6 +91,9 @@ export default {
                         this.restaurants = response.data.data
                         console.log(response)
                     })
+                    .finally(()=>{
+                    this.isLoading = false;
+                    });
                 }
             }
         },
@@ -92,12 +109,15 @@ export default {
     }
 }
 
+
 </script>
 
 
 <template>
     <!-- Container Bootstrap per margini laterali -->
     <div class="container">
+         <!-- Se sto ancora ricevendo dati allora lascio il layover -->
+        <AppLoader v-if="isLoading"/>
         <input type="text" class="form-control mt-3" :placeholder="type == 'all' ? 'Cerca tra tutti i ristoranti..' : 'Cerca tra i ristoranti di tipo ' + type + '...' " v-model="queryText" @input="search(queryText, type)">
         <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
         <div class="row mt-2 g-3">

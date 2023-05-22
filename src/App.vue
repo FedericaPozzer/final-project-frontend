@@ -59,7 +59,7 @@ export default{
 
     
     //Altezza componente 'Cerca' quando aperto
-    --search-height: 60vh;
+    --search-height: 30vh;
 
     //Altezza componente 'Quantità' di Piatto quando aperto
     --quantity-height: 60vh;
