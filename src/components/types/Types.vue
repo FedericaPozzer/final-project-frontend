@@ -55,7 +55,6 @@ export default {
     padding: 8px 0;
     gap: 1rem;
     overflow-x: scroll;
-    background-color: var(--bg-primary-color);
 }
 
 .type {
