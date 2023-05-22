@@ -119,6 +119,9 @@ export default {
          <!-- Se sto ancora ricevendo dati allora lascio il layover -->
          <AppLoader v-if="isLoading"/>
         <input type="text" class="form-control mt-3" :placeholder="type == 'all' ? 'Cerca tra tutti i ristoranti..' : 'Cerca tra i ristoranti di tipo ' + type + '...' " v-model="queryText" @input="search(queryText, type)">
+
+        <!-- se trovo qualcosa stampo la lista,in caso contrario do un messaggio mancato risultato -->
+        
         <div v-if="this.restaurants.length">
 
             <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
