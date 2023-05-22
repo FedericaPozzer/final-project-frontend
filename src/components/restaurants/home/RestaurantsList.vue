@@ -30,6 +30,9 @@ export default {
             this.restaurants = response.data.data
         } 
         )
+        .finally(()=>{
+        this.isLoading = false;
+    });
     },
     watch: {
     '$props':{
@@ -51,6 +54,9 @@ export default {
                         this.restaurants = response.data.data
                         console.log(response)
                     }) 
+                    .finally(()=>{
+                    this.isLoading = false;
+                    });
                 }
                 else{
                     axios.get("http://127.0.0.1:8000/api/search/" + type + '/' + this.queryText)
@@ -59,6 +65,9 @@ export default {
                         this.restaurants = response.data.data
                         console.log(response)
                     })
+                    .finally(()=>{
+                    this.isLoading = false;
+                    });
                 }
             }
             else{
@@ -71,6 +80,9 @@ export default {
                         console.log(response)
                     }
                     ) 
+                    .finally(()=>{
+                    this.isLoading = false;
+                    });
                 }
                 else{
                     axios.get("http://127.0.0.1:8000/api/search/" + type + '/' + query)
@@ -79,6 +91,9 @@ export default {
                         this.restaurants = response.data.data
                         console.log(response)
                     })
+                    .finally(()=>{
+                    this.isLoading = false;
+                    });
                 }
             }
         },
