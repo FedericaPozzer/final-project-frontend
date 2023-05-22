@@ -32,7 +32,7 @@ export default {
             <!-- Bottone per tutte le categorie -->
             <button class="type" @click="$emit('changeType', 'all'), active = 0" :class="{'active' : active == 0}">
                 <div class="box">
-                    <img width="48" height="48" src="https://img.icons8.com/fluency/48/street-food.png" alt="street-food"/>
+                    <img src="https://img.icons8.com/plasticine/100/sandwich.png" alt="sandwich"/>
                     <!-- TODO -->
                 </div>
                 
