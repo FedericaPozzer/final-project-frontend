@@ -91,10 +91,10 @@ export default{
 }
 .jumbotron{
     color: white;
-    overflow: hidden;
-    background-color: var(--bg-primary-color);
+    overflow: hidden;    
     display: grid;
     grid-template-columns: 40vw 60vw;
+    margin: 1rem 0;
     min-height: var(--home-jumbo-height);
     font-family: 'Bebas Neue', sans-serif;
     .image-container{
@@ -120,7 +120,6 @@ export default{
             flex-direction: column;
             justify-content: center;
         }
-        z-index: 2;
         display: flex;
         justify-content: flex-start;
         align-items: center;

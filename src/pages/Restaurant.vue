@@ -17,18 +17,35 @@ export default{
         return{
             restaurant: [],
             isLoading:false,
+            dishes: [],
+            queryText: ''
         }
     },
     created(){
         this.isLoading = true;
         axios.get('http://127.0.0.1:8000/api/restaurants/' + this.$route.params.id)
         .then((response)=> {
-            this.restaurant = response.data;
+            this.restaurant = response.data
+            this.dishes = this.restaurant.dishes
         })
-        .finally(()=>{
-        this.isLoading = false;
-    });
-}
+    },
+    methods: {
+        handleSearch(){
+            if(this.queryText != ''){
+                axios.get('http://127.0.0.1:8000/api/restaurants/' + this.$route.params.id + '/search/' + this.queryText)
+                .then((response)=>{
+                    this.dishes = response.data
+                })
+            }
+            else{
+            axios.get('http://127.0.0.1:8000/api/restaurants/' + this.$route.params.id)
+            .then((response)=> {
+            this.restaurant = response.data
+            this.dishes = this.restaurant.dishes
+        })
+            }
+        }
+    }
 }
 </script>
 
@@ -41,8 +58,9 @@ export default{
     <div class="container">
         <!-- Se sto ancora ricevendo dati allora lascio il layover -->
         <AppLoader v-if="isLoading"/>
+        <input type="text" class="form-control mt-3" :placeholder="'Cerca tra i piatti di ' + restaurant.name + '...'" v-model="queryText" @input="handleSearch()">
         <!-- Container Piatti -->
-        <DishesList :dishes="restaurant.dishes" />
+        <DishesList :dishes="dishes" />
     </div>
 
     
@@ -50,6 +68,9 @@ export default{
 
 </template>
 
-<style>
+<style scoped>
+.container{
+    margin-bottom: calc(var(--cartComponent-mobile-height) + 1rem);
+}
 
 </style>

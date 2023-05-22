@@ -56,7 +56,7 @@ export default {
     </div>
 
     <!-- Componente per scegliere la quantità del piatto -->
-    <DishQuantityHover v-show="isOpen" @close="isOpen = 0" />
+    <DishQuantityHover v-if="isOpen" @close="isOpen = 0" :dish="dish" />
 
 </template>
 
