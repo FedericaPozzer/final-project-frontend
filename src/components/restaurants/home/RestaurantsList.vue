@@ -98,7 +98,7 @@ export default {
 <template>
     <!-- Container Bootstrap per margini laterali -->
     <div class="container">
-        <input type="text" class="form-control mt-3" placeholder="Cerca tra i ristoranti.." v-model="queryText" @input="search(queryText, type)">
+        <input type="text" class="form-control mt-3" :placeholder="type == 'all' ? 'Cerca tra tutti i ristoranti..' : 'Cerca tra i ristoranti di tipo ' + type + '...' " v-model="queryText" @input="search(queryText, type)">
         <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
         <div class="row mt-2 g-3">
             <!-- Card Ristorante -->
