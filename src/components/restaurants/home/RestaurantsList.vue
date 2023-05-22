@@ -37,7 +37,7 @@ export default {
 <template>
     <!-- Container Bootstrap per margini laterali -->
     <div class="container">
-        <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
+         <!-- Se sto ancora ricevendo dati allora lascio il layover -->
         <AppLoader v-if="isLoading"/>
         <div class="row mt-2 g-3">
             <!-- Card Ristorante -->

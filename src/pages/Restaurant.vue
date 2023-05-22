@@ -15,13 +15,20 @@ export default{
     },
     data(){
         return{
-            restaurant: []
+            restaurant: [],
+            isLoading:false,
         }
     },
     created(){
+        this.isLoading = true;
         axios.get('http://127.0.0.1:8000/api/restaurants/' + this.$route.params.id)
-        .then((response)=> this.restaurant = response.data)
-    }
+        .then((response)=> {
+            this.restaurant = response.data;
+        })
+        .finally(()=>{
+        this.isLoading = false;
+    });
+}
 }
 </script>
 
@@ -32,6 +39,8 @@ export default{
 
     <!-- Container di Bootstrap per margini laterali -->
     <div class="container">
+        <!-- Se sto ancora ricevendo dati allora lascio il layover -->
+        <AppLoader v-if="isLoading"/>
         <!-- Container Piatti -->
         <DishesList :dishes="restaurant.dishes" />
     </div>
