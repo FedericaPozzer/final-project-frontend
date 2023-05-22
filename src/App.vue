@@ -75,6 +75,7 @@ export default{
 #app{
   background-color: var(--bg-color);
   height: 100vh;
+  overflow-x: hidden;
   color: var(--text-color);
   a{
     color: var(--text-color);

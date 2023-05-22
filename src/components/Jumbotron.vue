@@ -120,7 +120,6 @@ export default{
             flex-direction: column;
             justify-content: center;
         }
-        z-index: 2;
         display: flex;
         justify-content: flex-start;
         align-items: center;

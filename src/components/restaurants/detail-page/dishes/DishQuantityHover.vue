@@ -1,5 +1,25 @@
 <!-- Componente per scegliere la quantità del piatto da aggiungere al carrello -->
 <script>
+import {useCartStore} from '../../../../stores/cart'
+export default {
+    props: {
+        dish: Object
+    },
+    data(){
+        return{
+            cart: useCartStore(),
+            quantity: 1
+        }
+    },
+    created(){
+        this.cart.dishes.forEach((cartDish)=>{
+            if (cartDish.id == this.dish.id)
+            {
+                this.quantity = cartDish['quantity']
+            }
+        })
+    }
+}
 
 </script>
 
@@ -14,14 +34,28 @@
 
         <!-- Schermata -->
         <div class="quantity">
-            Quantità
+            <div class="name">
+                {{dish.name}}
+            </div>
+            <div class="description h-100 p-3">
+                {{ dish.description }}
+            </div>
 
-            <!-- TODO -->
+            <div class="buttons d-flex flex-column">
+                <div class="container">
+                    <div class="quantityButtons d-flex justify-content-around gap-3 align-items-center">
+                        <div class="button" @click="quantity == 1 ? quantity = 1 : quantity--">-</div>
+                        <div class="number">{{quantity}}</div>
+                        <div class="button" @click="quantity++">+</div>
+                    </div>
+                </div>
+                <div class="addToCart" @click="cart.addToCart(dish, quantity), $emit('close')">Aggiungi al carrello</div>
+            </div>
 
         </div>
     </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .quantityHover{
     position: fixed;
     top: 0;
@@ -30,7 +64,8 @@
     bottom: 0;
     z-index: 5;
     display: flex;
-    padding-left: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
     flex-direction: column;
     height: 100vh;
     width: 100vw;
@@ -41,10 +76,44 @@
         opacity: var(--backdrop-opacity);
     }
     .quantity{
+        z-index: 5;
         height: var(--quantity-height);
         width: 100vw;
         background-color: var(--bg-primary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        color: white;
+        .name{
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
 
+        .buttons{
+            font-size: 2rem;
+            gap: 10px;
+            .button{
+                background-color: var(--bg-secondary-color);
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 0;
+                border-radius: 50%;
+            }
+        }
+        .addToCart{
+            background-color: var(--bg-secondary-color);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        
+    }
+    .number{
+        font-size: 3rem;
     }
 }
 </style>
