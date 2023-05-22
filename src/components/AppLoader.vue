@@ -22,7 +22,7 @@ export default {
   display:flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(2, 0, 18, 0.7);
+  background-color: rgba(255, 192, 50, 0.7);
   backdrop-filter: blur(10px);
 
 }
