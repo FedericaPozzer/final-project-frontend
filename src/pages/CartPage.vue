@@ -44,19 +44,25 @@ export default{
             </div>
             <div class="container d-flex w-100 justify-content-center">
                 <div class="button red" @click="cart.deleteCart">
-                    Elimina Carrello
+                    Svuota Carrello
                 </div>
                 <div class="button">
-                    <span>
-                        ORDINA ORA
-                    </span>
-                    {{ cart.totalPrice }}€
+                    <a href="/checkout">
+                        <span>
+                            ORDINA ORA
+                        </span>
+                        {{ cart.totalPrice }}€
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .cart-container{
     display: flex;
     flex-direction: column;

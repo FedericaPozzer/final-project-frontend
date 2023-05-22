@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import AppHome from '../pages/Home.vue'
 import Restaurant from '../pages/Restaurant.vue'
 import CartComponent from '../components/CartComponent.vue'
+import CheckoutPage from '../pages/Checkout.vue'
 
 import Lens from '../components/navbar/Lens.vue'
 
@@ -42,6 +43,11 @@ const router = createRouter({
             path:'/restaurants/:id',
             name:'Restaurant',
             component:Restaurant,
+        },
+        {
+            path:'/checkout',
+            name:'Checkout',
+            component:CheckoutPage,
         },
 
         /* TODO: ROTTA PAGAMENTI */

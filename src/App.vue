@@ -14,6 +14,8 @@ export default{
     Navbar,
     Cart,
     CartPage
+  },
+  created(){
   }
 }
 </script>
@@ -25,9 +27,8 @@ export default{
 
   <!-- Contenuto variabile in base alla rotta in cui si è -->
   <router-view></router-view>
-
   <!-- Componente 'Carrello', al click apre la visualizzazione del carrelo. -->
-  <Cart/>
+  <Cart v-if="$route.path != '/checkout'"/>
   
 </template>
 
