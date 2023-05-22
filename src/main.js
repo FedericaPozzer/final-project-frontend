@@ -14,7 +14,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 const pinia = createPinia()
 
 createApp(App)
-component('AppLoader',AppLoader)
+.component('AppLoader',AppLoader)
 .use(pinia)
 .use(router)
 .mount('#app')

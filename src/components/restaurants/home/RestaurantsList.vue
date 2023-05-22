@@ -3,7 +3,7 @@
 <script>
 /* Importo le card dei ristoranti */
 import axios from 'axios';
-import RestaurantCard from './RestaurantCard.vue'
+import RestaurantCard from './RestaurantCard.vue';
 export default {
     components: {
         /* Componente card Ristorante */
@@ -13,16 +13,23 @@ export default {
     data() {
         return {
             restaurants: [],
+            isLoading:false,
         }
     },
 
     created() {
+        this.isLoading = true;
         axios.get("http://127.0.0.1:8000/api/restaurants")
-        .then((response) => 
-        this.restaurants = response.data
-        )
-    }
+        .then((response) => {
+        this.restaurants = response.data;
+        })
+
+        .finally(()=>{
+        this.isLoading = false;
+    });
+},
 }
+
 
 </script>
 
@@ -31,6 +38,7 @@ export default {
     <!-- Container Bootstrap per margini laterali -->
     <div class="container">
         <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
+        <AppLoader v-if="isLoading"/>
         <div class="row mt-2 g-3">
             <!-- Card Ristorante -->
             <RestaurantCard v-for="restaurant in restaurants" :key="restaurant.id" :restaurant="restaurant"/>
