@@ -20,7 +20,7 @@ export default {
     <!-- Header -->
     <header class="header-bar p-2">
 
-        <div class="row justify-content-between align-items-center">
+        <div class="row justify-content-around align-items-center w-100">
             <!-- SX -->
             <div class="col-5 col-md-4 col-lg-2 logo">
                 <!-- Logo con redirect homepage -->
@@ -32,11 +32,7 @@ export default {
             </div>
 
             <!-- DX -->
-            <div class="col-4 col-md-8 d-flex justify-content-end align-items-center">
-                <!-- Icona ricerca (componente Lens) che al click fa vedere Search -->
-                <div class="fs-4">
-                    <Lens />
-                </div>
+            <div class="col-4 col-md-8 d-flex justify-content-end align-items-center">                
                 <!-- Redirect al Backend -->
                 <div class="ms-4">
                     <button class="btn btn-outline-dark" id="btn-color" rel="tooltip" title="Area Ristoratori">
@@ -54,16 +50,23 @@ export default {
 
 
 <style lang="scss" scoped>
-.header {
+header {
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 10;
     height: var(--navbar-height);
-
+    background-color: var(--bg-primary-color);
+    display: flex;
+    align-items: center;
 }
 
 .header-bar {
-    background-color: var(--bg-primary-color);
-
+    button{
+        background-color: var(--bg-primary-color);
+        white-space: nowrap;
+    }
     #btn-color:hover {
         background-color: var(--bg-secondary-color);
         border-color: var(--bg-secondary-color);

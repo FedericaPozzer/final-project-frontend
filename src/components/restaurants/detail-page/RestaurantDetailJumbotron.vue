@@ -34,7 +34,6 @@ import {useEndpointStore} from "../../../stores/endpoint.js"
                 <p class="">{{ RestaurantType.name }}</p>
             </div> -->
             
-            <p>P.Iva {{ restaurant.vat }}</p>
             <p>{{ restaurant.address }}</p>
             <p>Tel. {{ restaurant.phone_number }}</p>
 
@@ -46,12 +45,13 @@ import {useEndpointStore} from "../../../stores/endpoint.js"
 
 <style lang="scss" scoped>
 .jumbo{
+    padding-top: calc(var(--navbar-height) + 1rem);
     width: 100%;
-    height: var(--restaurant-jumbo-height);
     // background-color: var(--bg-primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 2rem;
 
     .name {
         color: var(--bg-secondary-color)
@@ -83,7 +83,7 @@ p {
 // Restaurant name font - responsive
     @media screen and (max-width:1200px) {
         .name {
-            font-size: 50px;
+            font-size: 40px;
         }
     }
 
