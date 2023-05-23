@@ -45,7 +45,12 @@
     <!-- Schermata carrello desktop -->
     <div class="cart-round d-none d-md-flex" >
         <div @click="cartExpanded = 1">
-            <img width="40" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACUElEQVR4nO2ZPWtUQRSGn9WAEsS0foUQNRo/QCTY5A8YCaKVnaCSqBERCQh2VoKNjQgWFhqMJhJEghEri5hSrGwUAgG/BRcNgkXErBx4L1wk7JJ1ztw7kAem2b3znvMus3PPmYEVykc/8AGo1RnfgRfACaBCSfnYwMS/Y7SsZt7nkny3xPeW9CZgEPip545TQg7JjJnoa/DsaRl5ReKsAb7JzC4SZ1RGhkicQRkZJ3F2yMjXsu5ezWzZ3STOAxk5S+KckZExEqdbRj6v/E9KxPgyazSPMRPCyFAJjMyGMLI79z+JzV3FvhJCzF6GXyS4k3isUxW+CGwNJTohI1YVx+KUYj4PKXpeoveJx4xHT7RXop+IQ5eW1DzQGlK4ouKxpiDeXFWs2x7ijyQ+gC+r1MVarF6PABckfg9fDirOW6+yaJ8CWN8fo5K47BWgkuvjtznFaAN+AX+Adhx5LCO2x3twTvrPcOaiAo046b+U/jGc2V/ngO9/2SPtKrCWCFtjVQE7A2tfl+5NIjGpgHbQHYoWVdem20MkhhXwTkDNI9J8TUR6FHTOYTccJiKrdY8Sugv8DWwgMk8Cm1gEblAAl5TALRLngIy8IXFa1PTUdMuVNJMycpLEGZCRaRJnfa5cuQZ0aGtOkqPAQsBteLpIM4cDGlkANhZlZERJ2Etys8ZUg3uVsTpz7BK2ELKq1ZLJaM/1FktRrTPnBwWRvU+2LCOp+SbmuJOdd00pMRtP9dlEwDlRrrGz05X8sOWzPeAcYmBr/aGWjA37VRsl1Mwc/gIXmFSH9pqNAQAAAABJRU5ErkJggg==">
+            <div class="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="numberOfItems">
+                    {{cart.numberOfItems}}
+                </span>
+            </div>        
         </div>
     </div>
     <Transition>
@@ -65,6 +70,7 @@
   transform: translateY(100%);
 }
 .cart-bar{
+    font-size: 2.5rem;
     position: fixed;
     height: var(--cartComponent-mobile-height);
     width: 100%;
@@ -79,31 +85,40 @@
     align-items: center;
     padding: 1rem;
     box-shadow: 10px 0 10px var(--bg-primary-color);
-    .cart{
-        position: relative;
-        font-size: 2.5rem;
-        margin-right: 1rem;
-        .numberOfItems{
-            font-size: 1.5rem;
-            background-color: white;
-            width: 2rem;
-            height: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 0;
-            transform: translateX(100%);
-            border-radius: 50%;
-        }
-
-    }
     .amount{
         color: white;
         font-size: 2rem;
         margin-left: 1rem;
         padding: 5px;
     }
+}
+.cart{
+
+    position: relative;
+    margin-right: 1rem;
+    display: flex;
+    cursor: pointer;
+    i{
+        font-size: 3rem;
+        color: var(--bg-secondary-color);
+
+    }
+    .numberOfItems{
+        font-size: 1.5rem;
+        background-color: white;
+        color: var(--bg-secondary-color);
+        width: 1.8rem;
+        height: 1.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -10px;
+        right:15px;
+        transform: translateX(100%);
+        border-radius: 50%;
+    }
+
 }
 
 .cart-round{
@@ -115,6 +130,9 @@
     margin: 2rem;
     bottom: 0;
     right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     padding: 15px;
 }

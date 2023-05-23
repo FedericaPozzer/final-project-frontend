@@ -20,32 +20,34 @@ export default{
         <div class="cart" @click="$emit('cartExpanded')">
             <div class="container">
                 <div class="dishes">
-                    <div class="dish" v-for="dish, i in cart.dishes">
-
-                        <img :src=" endpoint.endpoint + dish.image" alt="" srcset="">
-
-                        <span class="name">
-                            {{ dish.name }}
-                        </span>
-                        <div class="quantity-buttons d-flex gap-2 justify-content-center">
-                            <div @click="dish.quantity != 1 ? dish.quantity-- : dish.quantity = 1" class="d-flex align-items-center justify-content-end">
-                                -
+                    <div class="container">
+                        <div class="dish" v-for="dish, i in cart.dishes">
+    
+                            <img :src=" endpoint.endpoint + dish.image" alt="" srcset="">
+    
+                            <span class="name">
+                                {{ dish.name }}
+                            </span>
+                            <div class="quantity-buttons d-flex gap-2 justify-content-center">
+                                <div @click="dish.quantity != 1 ? dish.quantity-- : dish.quantity = 1" class="d-flex align-items-center justify-content-end">
+                                    -
+                                </div>
+                                <div class="d-flex align-items-center justify-content-end">
+                                    {{ dish.quantity }}
+                                </div>
+                                <div @click="dish.quantity++" class="d-flex align-items-center justify-content-end">
+                                    +
+                                </div>
                             </div>
-                            <div class="d-flex align-items-center justify-content-end">
-                                {{ dish.quantity }}
-                            </div>
-                            <div @click="dish.quantity++" class="d-flex align-items-center justify-content-end">
-                                +
-                            </div>
+                                <div @click="cart.removeDish(i)" class="d-flex align-items-center justify-content-end">
+                                    X
+                                </div>
+                                <span></span>
+                                <span class="description">{{dish.description}}</span>
+                                <div class="d-flex justify-content-end">
+                                    {{ (dish.price * dish.quantity).toFixed(2) }}€
+                                </div>
                         </div>
-                            <div @click="cart.removeDish(i)" class="d-flex align-items-center justify-content-end">
-                                X
-                            </div>
-                            <span></span>
-                            <span class="description">{{dish.description}}</span>
-                            <div class="d-flex justify-content-end">
-                                {{ (dish.price * dish.quantity).toFixed(2) }}€
-                            </div>
                     </div>
                 </div>
             </div>
@@ -103,18 +105,23 @@ a{
     .dishes{
         position: fixed;
         bottom: 5rem;
-        top: calc(var(--cartComponent-mobile-height) + 4rem);
+        top: calc(var(--cartComponent-mobile-height) + 4.5rem);
+        left: 0;
+        right: 0;
         overflow-y: auto;
         margin: 10px auto;
-        display: grid;
-        gap: 5px;
-        grid-auto-rows: auto;
-        grid-template-columns: 1fr;
-        @media screen and (min-width: 968px) {
-            width: 90vw;
-            grid-template-columns: 1fr 1fr;
-            grid-auto-rows: 150px;
-            gap: 20px;
+        .container{
+            display: grid;
+            grid-auto-rows: auto;
+            grid-template-columns: 1fr;
+            gap: 5px;
+
+            @media screen and (min-width: 968px) {
+                width: 90vw;
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: 150px;
+                gap: 20px;
+            }
         }
         .dish{
             padding: 0 5px;
