@@ -31,13 +31,13 @@ export default {
 
             <!-- Bottone per tutte le categorie -->
             <button class="type" @click="$emit('changeType', 'all'), active = 0" :class="{'active' : active == 0}">
-                <div class="box">
-                    <img src="https://img.icons8.com/plasticine/100/sandwich.png" alt="sandwich"/>
-                </div>
                 
                 <p class="text">
                     Tutti
                 </p>
+                <div class="box">
+                    <img src="https://img.icons8.com/plasticine/100/sandwich.png" alt="sandwich"/>
+                </div>
             </button>
 
             <!-- Bottoni per singola categoria -->
@@ -48,7 +48,7 @@ export default {
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .types-container{
     display: flex;
     padding: 8px 0;
@@ -57,19 +57,32 @@ export default {
 }
 
 .type {
-    min-width: 90px;
-    max-width: 90px;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
     background: none;
     border: none;
-    border-radius: 40px;
-    padding: 7px;
+    border-radius: 10px 10px 10px 10px;
     flex-grow: 1;
     background-color: var(--bg-secondary-color);
     box-shadow: 1px 2px 10px var(--bg-secondary-color);
     transition: all .1s linear;
+    padding: 10px;
     &.active,&:hover{
         box-shadow: 5px 2px 10px var(--bg-secondary-color);
         background-color: #d84f15;
+        border-radius: 20px 20px 20px 20px;
+    }
+    .text {
+        margin: 0;
+        margin-right: 10px;
+        padding: 0;
+        font-size: 1.2rem;
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 600;
+        z-index: 1;
     }
 }
 
@@ -78,22 +91,15 @@ export default {
 }
 
 .box {
-    height: 60px;
-    aspect-ratio: 1 / 1;
+    height: 30px;
+    width: 10px;
     margin: auto;
-    background-color: white;
     border-radius: 50%;
     text-align: center;
-    padding: 5px;
     img{
-        width: 100%;
+        height: 30px;
+        width: auto;
+        transform: scale(2) translate(10%, 0);
     }
-}
-
-.text {
-    font-size: 13px;
-    text-align: center;
-    margin-top: 6px;
-    color: white;
 }
 </style>

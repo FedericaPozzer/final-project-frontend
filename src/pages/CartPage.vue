@@ -3,10 +3,12 @@
 
 <script>
 import { useCartStore } from '../stores/cart';
+import { useEndpointStore } from '../stores/endpoint.js';
 export default{
     data(){
         return{
-            cart: useCartStore()
+            cart: useCartStore(),
+            endpoint: useEndpointStore()
         }
     }
 }
@@ -17,41 +19,48 @@ export default{
         <div class="cart-backdrop" @click="$emit('close')"></div>
         <div class="cart" @click="$emit('cartExpanded')">
             <div class="container">
-                <div class="d-flex flex-column w-100 h-100 p-2">
-                    <div class="dish d-flex justify-content-between" v-for="dish, i in cart.dishes">
-                        <span>
+                <div class="dishes">
+                    <div class="dish" v-for="dish, i in cart.dishes">
+
+                        <img :src=" endpoint.endpoint + dish.image" alt="" srcset="">
+
+                        <span class="name">
                             {{ dish.name }}
                         </span>
-                        <div class="d-flex gap-4">
-                            <div @click="dish.quantity--">
+                        <div class="quantity-buttons d-flex gap-2 justify-content-center">
+                            <div @click="dish.quantity--" class="d-flex align-items-center justify-content-end">
                                 -
                             </div>
-                            <div>
+                            <div class="d-flex align-items-center justify-content-end">
                                 {{ dish.quantity }}
                             </div>
-                            <div @click="dish.quantity++">
+                            <div @click="dish.quantity++" class="d-flex align-items-center justify-content-end">
                                 +
                             </div>
-                            <div>
-                                {{ (dish.price * dish.quantity).toFixed(2) }}€
-                            </div>
-                            <div @click="cart.removeDish(i)">
+                        </div>
+                            <div @click="cart.removeDish(i)" class="d-flex align-items-center justify-content-end">
                                 X
                             </div>
-                        </div>
+                            <span></span>
+                            <span class="description">{{dish.description}}</span>
+                            <div class="d-flex justify-content-end">
+                                {{ (dish.price * dish.quantity).toFixed(2) }}€
+                            </div>
                     </div>
                 </div>
             </div>
-            <div class="container d-flex w-100 justify-content-center">
+            <div class="container bottom-cart d-flex w-100 justify-content-center">
                 <div class="button red" @click="cart.deleteCart">
-                    Svuota Carrello
+                    Svuota
                 </div>
                 <div class="button">
                     <a href="/checkout">
                         <span>
-                            ORDINA ORA
+                            ORDINA ORA |
                         </span>
-                        {{ cart.totalPrice }}€
+                        <span>
+                            {{ cart.totalPrice }}€
+                        </span>
                     </a>
                 </div>
             </div>
@@ -91,22 +100,98 @@ a{
         z-index: 3;
     }
     
-    .dish{
-        font-size: 1.5rem;
-        padding: 5px;
+    .dishes{
+        position: fixed;
+        bottom: 5rem;
+        top: calc(var(--cartComponent-mobile-height) + 4rem);
+        overflow-y: auto;
+        margin: 10px auto;
+        display: grid;
+        gap: 5px;
+        grid-auto-rows: auto;
+        grid-template-columns: 1fr;
+        @media screen and (min-width: 968px) {
+            width: 90vw;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 150px;
+            gap: 20px;
+        }
+        .dish{
+            padding: 0 5px;
+            position: relative;
+            max-height: 150px;
+            display: grid;
+            grid-template-columns: 5fr 10fr 4fr 1fr;
+            grid-auto-rows: auto;
+            align-items: center;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            .name{
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+                max-height: 3rem;
+                overflow: hidden;
+            }
+            img{
+                margin: auto 5px;
+                width: 80px;
+                height: 80px;
+                @media screen and (min-width: 968px) {
+                    width: 100px;
+                    height: 100px;
+                }
+                object-fit: contain;
+                object-position: center;
+            }
+            .quantity-buttons{
+                background-color: var(--bg-primary-color);
+                align-items: center;
+                border-radius: 10px;
+                max-height: 50px;
+            }
+            .description{
+                font-size: .8rem;
+                line-height: 1rem;
+                overflow: hidden;
+                max-height: 2rem;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                border-radius: 20px;
+                width: 30%;
+                height: 5px;
+                background: var(--bg-secondary-color);
+            }
+        }
+    }
+    .bottom-cart{
+        position: fixed;
+        bottom: 0;
+        max-height: 5rem;
     }
     .button{
-        padding: 1rem;
+        padding: 20px;
+        white-space: nowrap;
         margin: 1rem;
-        background-color: var(--bg-primary-color);
+        background-color: var(--bg-secondary-color);
         border-radius: 20px;
-        color: white;
         font-weight: 600;
-        width: 50%;
-        max-width: 300px;
+        width: 75%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        a{
+            color: white;
+
+            span{
+                color: white;
+            }
+        }
         &.red{
+            width: 25%;
             background-color: red;
         }
     }

@@ -55,7 +55,7 @@ export default{
     --navbar-height: 10vh;
 
     //Altezza Jumbotron
-    --home-jumbo-height: 30vh;
+    --home-jumbo-height: 25vh;
     --restaurant-jumbo-height: 30vh;
 
     
@@ -81,6 +81,27 @@ export default{
   a{
     color: var(--text-color);
   }
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--bg-primary-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-primary-color);
+}
 }
 
 
