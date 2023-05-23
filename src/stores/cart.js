@@ -11,14 +11,16 @@ export const useCartStore = defineStore("cart", {
   actions: {
     addToCart(dish, quantity)
     {
+      if(this.numberOfItems != 0){
       if(dish.restaurant_id != this.dishes[0].restaurant_id){
-        if (confirm("Questo piatto appartiene a un ristorante diverso dagli altri nel tuo carrello. Vuoi eliminare il carrello e crearne uno nuovo?")) {
-          this.deleteCart();
-          dish['quantity'] = quantity
-          this.dishes.push(dish)
-
-        } else {
-          return
+          if (confirm("Questo piatto appartiene a un ristorante diverso dagli altri nel tuo carrello. Vuoi eliminare il carrello e crearne uno nuovo?")) {
+            this.deleteCart();
+            dish['quantity'] = quantity
+            this.dishes.push(dish)
+  
+          } else {
+            return
+          }
         }
       }
       let isInCart = 0
