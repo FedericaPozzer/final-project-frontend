@@ -27,16 +27,15 @@ import {useEndpointStore} from "../../../stores/endpoint.js"
             <img :src="endpoint.endpoint + restaurant.image" alt="img">
         </div>
     
-        <div class="info-box ms-2 ms-md-5">
+        <div class="info-box ms-2 ms-md-5 d-flex flex-column justify-content-end">
             <h2 class="me-md-5 name">{{ restaurant.name }}</h2>
-            <div class="d-flex flex-column flex-wrap info">
+
+            <div class="d-flex flex-wrap justify-content-start info">
                 <!-- <div v-for="RestaurantType in restaurant.types" :key="RestaurantType.id">
                     <p class="">{{ RestaurantType.name }}</p>
                 </div> -->
-                
-                <p>{{ restaurant.address }}</p>
-                <p>Tel. {{ restaurant.phone_number }}</p>
-    
+                <h5 class="info-custom">{{ restaurant.address }}</h5>
+                <h5 class="info-custom">Tel. {{ restaurant.phone_number }}</h5>
             </div>
         </div>
     </div>
@@ -56,7 +55,8 @@ import {useEndpointStore} from "../../../stores/endpoint.js"
     box-shadow: 10px 0 10px var(--bg-primary-color);
 
     .name {
-        color: var(--bg-secondary-color)
+        color: var(--bg-secondary-color);
+        font-weight: 800;
     }
 
     img {
@@ -81,7 +81,12 @@ p {
 }
 
 .info-box {
-    max-height: 25vh;
+    .info-custom {
+        background-color: var(--bg-secondary-color);
+        padding: 10px;
+        border-radius: 20px;
+        color: white;
+    }
 }
 
 
