@@ -8,11 +8,19 @@ export default {
 <!-- creazione di un layover che viene mostrato fino alla fine delcaricamento -->
 <template>
   <div class="layover">
-    <img class="" src="../../public/logo-loader.png" alt="logo-loader">
+    <div class="container-animation">
+      <img class="" src="../../public/logo-loader.png" alt="logo-loader">
+    </div>
   </div>
 </template>
 
+
 <style lang="scss" scoped>
+.container-animation{
+  // background-color: var(--bg-secondary-color);
+  // backdrop-filter: blur(70px);
+  // width: 800px;
+}
 .layover{
   position:fixed;
   z-index: 2;
@@ -26,8 +34,18 @@ export default {
   background-color: rgba(255, 192, 50, 0.7);
   backdrop-filter: blur(10px);
   img{
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
     width: 25rem;
   }
+  @keyframes example {
+  0%   {left:-200px; top:0px;}
+  50%  {left:200px; top:0px;}
+  100%  {left:-200px; top:0px;}
+  
+}
 }
 
 </style>
