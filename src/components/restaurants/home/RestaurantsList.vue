@@ -122,7 +122,7 @@ export default {
 
         <!-- se trovo qualcosa stampo la lista,in caso contrario do un messaggio mancato risultato -->
         
-        <div v-if="this.restaurants.length">
+        <div v-if="this.restaurants.length != 0">
 
             <!-- Row che mostra 1 ristorante a riga o 2 da tablet in su -->
             <div class="row mt-2 g-3">

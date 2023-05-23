@@ -28,7 +28,7 @@ export default{
                             {{ dish.name }}
                         </span>
                         <div class="quantity-buttons d-flex gap-2 justify-content-center">
-                            <div @click="dish.quantity--" class="d-flex align-items-center justify-content-end">
+                            <div @click="dish.quantity != 1 ? dish.quantity-- : dish.quantity = 1" class="d-flex align-items-center justify-content-end">
                                 -
                             </div>
                             <div class="d-flex align-items-center justify-content-end">
