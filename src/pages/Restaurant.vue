@@ -88,7 +88,7 @@ export default{
     margin-bottom: calc(var(--cartComponent-mobile-height) + 1rem);
 }
 .no-match-message{
-    font-size: 5rem;
+    font-size: 3rem;
     -webkit-text-stroke: 1px black;
     color: #ee6a33;
 }
