@@ -21,14 +21,18 @@ export default{
 </script>
 
 <template>
+  <div class="pippo">
 
-  <!-- Navbar/Header -->
-  <Navbar />
+    
+    <!-- Navbar/Header -->
+    <Navbar />
+    
+    <!-- Contenuto variabile in base alla rotta in cui si è -->
+    <router-view></router-view>
+    <!-- Componente 'Carrello', al click apre la visualizzazione del carrelo. -->
+    <Cart v-if="$route.path != '/checkout'"/>
 
-  <!-- Contenuto variabile in base alla rotta in cui si è -->
-  <router-view></router-view>
-  <!-- Componente 'Carrello', al click apre la visualizzazione del carrelo. -->
-  <Cart v-if="$route.path != '/checkout'"/>
+  </div>
   
 </template>
 
@@ -44,6 +48,7 @@ export default{
     --bg-primary-color: #ffc032;
     --bg-color: white;
     --bg-secondary-color: #ee6a33;
+    --bg-light: #fff3d8;
 
     --backdrop-opacity: .3;
 
@@ -102,6 +107,10 @@ export default{
 ::-webkit-scrollbar-thumb:hover {
   background: var(--bg-primary-color);
 }
+}
+
+.pippo{
+  background-color: var(--bg-light);
 }
 
 

@@ -6,13 +6,15 @@
 import Jumbotron from '../components/Jumbotron.vue'
 import Types from '../components/types/Types.vue'
 import RestaurantsList from '../components/restaurants/home/RestaurantsList.vue'
+import Success from './SuccessPage.vue'
 
 export default{
     components: {
       /* Importo i componenti */
       Jumbotron,
       Types,
-      RestaurantsList
+      RestaurantsList,
+      Success
     },
     methods:{
       changeType(type){
@@ -42,6 +44,8 @@ export default{
 <div class="container">
   <RestaurantsList :type="type"/>
 </div>
+
+<Success />
 
 </template>
 
