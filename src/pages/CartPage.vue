@@ -55,7 +55,7 @@ export default{
                 <div class="button red" @click="cart.deleteCart">
                     Svuota
                 </div>
-                <div class="button">
+                <div class="button" @click="$router.push('/checkout')">
                     <a href="/checkout">
                         <span>
                             ORDINA ORA |

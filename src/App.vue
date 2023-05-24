@@ -79,7 +79,7 @@ export default{
 }
 
 #app{
-  background-color: var(--bg-color);
+  background-color: var(--bg-light);
   height: 100vh;
   overflow-x: hidden;
   color: var(--text-color);
@@ -109,9 +109,6 @@ export default{
 }
 }
 
-.pippo{
-  background-color: var(--bg-light);
-}
 
 
 </style>
