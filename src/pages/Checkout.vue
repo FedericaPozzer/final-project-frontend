@@ -46,7 +46,6 @@ export default{
     document.getElementById('expireDate').classList.remove('is-invalid')
 
 
-
             if(this.hostedFieldInstance)
             {
                 this.isLoading = 1
@@ -66,6 +65,7 @@ export default{
                         this.isLoading = 0
                         this.isError = 0
                         this.isSuccess = 1
+                        this.cart.dishes = []
                         console.log(response)
                     })
                 })

@@ -75,8 +75,31 @@ a{
     color: inherit;
 }
 .cart-container{
+
     display: flex;
-    flex-direction: column;
+    @media (orientation: landscape) {
+          flex-direction: row;
+          .cart-backdrop{
+            height: 100vh;
+            width: 60%;
+          }
+          .cart{
+            height: 100vh;
+            width: 100%;
+          }
+      }
+      
+      @media (orientation: portrait) {
+          flex-direction: column;
+          .cart-backdrop{
+              height: 20vh;
+              width: 100%;
+            }
+            .cart{
+                width: 100%;
+                height: 80vh;
+            }
+      }
     position: fixed;
     bottom: 0;
     left: 0;
@@ -85,43 +108,32 @@ a{
     z-index: 10;
     
     .cart-backdrop{
-        height: 20vh;
-        width: 100%;
         background-color: black;
         opacity: var(--backdrop-opacity);
     }
     
     .cart{
-        width: 100%;
-        height: 80vh;
         background-color: var(--bg-color);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         z-index: 3;
+        overflow-y: scroll;
+        margin: 0;
     }
     
     .dishes{
-        position: fixed;
         bottom: 5rem;
         top: calc(var(--cartComponent-mobile-height) + 4.5rem);
         left: 0;
         right: 0;
-        overflow-y: auto;
         margin: 10px auto;
         .container{
             display: grid;
             grid-auto-rows: auto;
             grid-template-columns: 1fr;
             gap: 5px;
-
-            @media screen and (min-width: 968px) {
-                width: 90vw;
-                grid-template-columns: 1fr 1fr;
-                grid-auto-rows: 150px;
-                gap: 20px;
-            }
         }
         .dish{
             padding: 0 5px;
@@ -174,7 +186,6 @@ a{
         }
     }
     .bottom-cart{
-        position: fixed;
         bottom: 0;
         max-height: 5rem;
     }

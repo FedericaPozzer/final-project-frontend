@@ -59,16 +59,32 @@
     
 </template>
 <style lang="scss">
-.v-enter-active,
-.v-leave-active {
-  transition: all 0.2s ease;
-}
+@media (orientation: landscape) {
+    .v-enter-active,
+    .v-leave-active {
+      transition: all 0.2s ease;
+    }
+    
+    .v-enter-from,
+    .v-leave-to {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+  
+  @media (orientation: portrait) {
 
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-  transform: translateY(100%);
-}
+    .v-enter-active,
+    .v-leave-active {
+      transition: all 0.2s ease;
+    }
+    
+    .v-enter-from,
+    .v-leave-to {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
 .cart-bar{
     font-size: 2.5rem;
     position: fixed;
