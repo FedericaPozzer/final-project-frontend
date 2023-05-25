@@ -26,15 +26,17 @@ export default{
 <template>
 
     <div class="">
+
         <!-- Navbar/Header -->
         <Navbar />
     
         <!-- Contenuto variabile in base alla rotta in cui si è -->
         <router-view></router-view>
 
-        <!-- Componente 'Carrello', al click apre la visualizzazione del carrelo. -->
-        <Cart v-if="$route.path != '/checkout'"/>
-            <!-- || $route.path != '/success'    -- insieme non funzionano :( -->
+        <!-- Componente 'Carrello', al click apre la visualizzazione del carrello. -->
+        <Cart v-if="$route.path != '/checkout'" />
+            <!-- || $route.path != '/success' -- insieme non funzionano, lo metto in CartComponent -->
+    
     </div>
   
 </template>
