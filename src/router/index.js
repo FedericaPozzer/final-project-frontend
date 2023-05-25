@@ -4,6 +4,7 @@ import AppHome from '../pages/Home.vue'
 import Restaurant from '../pages/Restaurant.vue'
 import CartComponent from '../components/CartComponent.vue'
 import CheckoutPage from '../pages/Checkout.vue'
+import Success from '../pages/SuccessPage.vue'
 
 import Lens from '../components/navbar/Lens.vue'
 
@@ -48,6 +49,11 @@ const router = createRouter({
             path:'/checkout',
             name:'Checkout',
             component:CheckoutPage,
+        },
+        {
+            path:'/success',
+            name:'Success',
+            component:Success,
         },
 
         /* TODO: ROTTA PAGAMENTI */

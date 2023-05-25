@@ -45,7 +45,6 @@ export default{
   <RestaurantsList :type="type"/>
 </div>
 
-<Success />
 
 </template>
 
