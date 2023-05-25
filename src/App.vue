@@ -48,7 +48,7 @@ export default{
     --bg-primary-color: #ffc032;
     --bg-color: white;
     --bg-secondary-color: #ee6a33;
-    --bg-light: #fff3d8;
+    --bg-light: #fbf8f3;
 
     --backdrop-opacity: .4;
 
