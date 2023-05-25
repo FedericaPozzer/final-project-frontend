@@ -23,7 +23,7 @@ export default{
             
                     <!-- se il carrello è pieno -->
                     <div v-if="cart.dishes.length" class="">
-                    <div class="dishes">
+                        <div class="dishes">
                         <div class="container">
             
                             <div class="dish" v-for="dish, i in cart.dishes">
@@ -58,9 +58,9 @@ export default{
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        </div>
             
-                    <div class="container bottom-cart d-flex w-100 justify-content-center">
+                        <div class="container bottom-cart d-flex w-100 justify-content-center">
                         <div class="button red" @click="cart.deleteCart">
                         Svuota
                         </div>
@@ -74,16 +74,17 @@ export default{
                                 </span>
                             </a>
                         </div>
-                    </div>
+                        </div>
                     </div>
 
                     <!-- se il carrello è vuoto -->
                     <div v-else>
-                    <h2 class="empty-chart">
-                        Il carrello è vuoto!
-                    </h2>
+                        <h2 class="empty-chart">
+                         Il carrello è vuoto!
+                        </h2>
                     </div>
-                </div>
+                
+            </div>
             </div>
     </div>
 
