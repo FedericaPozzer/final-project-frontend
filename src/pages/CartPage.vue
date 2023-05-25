@@ -206,12 +206,8 @@ a {
                 border-radius: 10px;
                 max-height: 50px;
             }
-
-            .btn-hover:hover {
-                color: white;
-            }
-
-            .description {
+            
+            .description{
                 font-size: .8rem;
                 line-height: 1rem;
                 overflow: hidden;

@@ -50,7 +50,7 @@ export default{
     --bg-secondary-color: #ee6a33;
     --bg-light: #fff3d8;
 
-    --backdrop-opacity: .3;
+    --backdrop-opacity: .4;
 
   //
   //Spaziature
@@ -68,7 +68,7 @@ export default{
     --search-height: 30vh;
 
     //Altezza componente 'Quantità' di Piatto quando aperto
-    --quantity-height: 60vh;
+    --quantity-height: 40vh;
 
 
     //Altezza componente Carrello mobile
