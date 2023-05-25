@@ -29,6 +29,7 @@
 
 <template>
 
+<div v-if="$route.path != '/success'">
     <!-- Schermata carrello mobile -->
     <div class="cart-bar d-md-none" @click="cartExpanded == 0 ? cartExpanded = 1 : cartExpanded = 1" >
         <span class="amount">
@@ -56,7 +57,7 @@
     <Transition>
         <CartPage v-show="cartExpanded" @close="cartExpanded = 0"/>
     </Transition>
-    
+</div>
 </template>
 <style lang="scss">
 @media (orientation: landscape) {
