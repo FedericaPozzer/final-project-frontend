@@ -15,59 +15,78 @@ export default{
 </script>
 
 <template>
+    
     <div class="cart-container">
         <div class="cart-backdrop" @click="$emit('close')"></div>
-        <div class="cart" @click="$emit('cartExpanded')">
-            <div class="container">
-                <div class="dishes">
-                    <div class="container">
-                        <div class="dish" v-for="dish, i in cart.dishes">
+            <div class="cart" @click="$emit('cartExpanded')">
+                <div class="container">
+            
+                    <!-- se il carrello è pieno -->
+                    <div v-if="cart.dishes.length" class="">
+                    <div class="dishes">
+                        <div class="container">
+            
+                            <div class="dish" v-for="dish, i in cart.dishes">
     
-                            <img :src=" endpoint.endpoint + dish.image" alt="" srcset="">
+                                <img :src=" endpoint.endpoint + dish.image" alt="" srcset="">
     
-                            <span class="name">
-                                {{ dish.name }}
-                            </span>
-                            <div class="quantity-buttons d-flex gap-2 justify-content-center">
-                                <div @click="dish.quantity != 1 ? dish.quantity-- : dish.quantity = 1" class="d-flex align-items-center justify-content-end">
-                                    -
+                                <span class="name">
+                                    {{ dish.name }}
+                                </span>
+                            
+                                <div class="quantity-buttons d-flex gap-2 justify-content-center">
+                                    <div @click="dish.quantity != 1 ? dish.quantity-- : dish.quantity = 1" class="d-flex align-items-center justify-content-end">
+                                        -
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-end">
+                                        {{ dish.quantity }}
+                                    </div>
+                                    <div @click="dish.quantity++" class="d-flex align-items-center justify-content-end">
+                                        +
+                                    </div>
                                 </div>
-                                <div class="d-flex align-items-center justify-content-end">
-                                    {{ dish.quantity }}
-                                </div>
-                                <div @click="dish.quantity++" class="d-flex align-items-center justify-content-end">
-                                    +
-                                </div>
-                            </div>
+                                
                                 <div @click="cart.removeDish(i)" class="d-flex align-items-center justify-content-end">
                                     X
                                 </div>
+                            
                                 <span></span>
                                 <span class="description">{{dish.description}}</span>
+
                                 <div class="d-flex justify-content-end">
                                     {{ (dish.price * dish.quantity).toFixed(2) }}€
                                 </div>
+                            </div>
                         </div>
+                    </div>
+            
+                    <div class="container bottom-cart d-flex w-100 justify-content-center">
+                        <div class="button red" @click="cart.deleteCart">
+                        Svuota
+                        </div>
+                        <div class="button" @click="$router.push('/checkout')">
+                            <a href="/checkout">
+                                <span>
+                                    ORDINA ORA |
+                                </span>
+                                <span>
+                                    {{ cart.totalPrice }}€
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- se il carrello è vuoto -->
+                    <div v-else>
+                    <h2 class="empty-chart">
+                        Il carrello è vuoto!
+                    </h2>
                     </div>
                 </div>
             </div>
-            <div class="container bottom-cart d-flex w-100 justify-content-center">
-                <div class="button red" @click="cart.deleteCart">
-                    Svuota
-                </div>
-                <div class="button" @click="$router.push('/checkout')">
-                    <a href="/checkout">
-                        <span>
-                            ORDINA ORA |
-                        </span>
-                        <span>
-                            {{ cart.totalPrice }}€
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
+
 </template>
 <style lang="scss" scoped>
 a{
@@ -212,6 +231,10 @@ a{
             width: 25%;
             background-color: red;
         }
+    }
+
+    .empty-chart {
+        color: var(--bg-secondary-color);
     }
 }
 
