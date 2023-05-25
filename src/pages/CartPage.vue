@@ -111,6 +111,10 @@ a {
             height: 100vh;
             width: 100%;
         }
+
+        .bottom-cart {
+            max-width: 60%;
+        }
     }
 
     @media (orientation: portrait) {
@@ -228,7 +232,10 @@ a {
 
     .bottom-cart {
         bottom: 0;
+        position: fixed;
         max-height: 5rem;
+        z-index: 2;
+        background-color: inherit;
     }
 
     .button {
@@ -260,5 +267,6 @@ a {
 }
 .empty-chart {
     color: var(--bg-secondary-color);
+    margin-top: 45vh;
 }
 </style>   
