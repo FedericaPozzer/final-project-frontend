@@ -21,7 +21,7 @@ export default {
 
         <img class="my-3" width="80" height="80" src="https://img.icons8.com/color/48/checked--v1.png" alt="checked--v1"/>
     
-        <p> Il tuo oridne è andato a buon fine, riceverai presto un'email di conferma. </p>
+        <p> Il tuo ordine è andato a buon fine, riceverai presto un'email di conferma. </p>
         <p> Ora preparati per ricevere i tuoi piatti deliziosi! </p>
     
         <button class="button">
@@ -49,6 +49,7 @@ export default {
     font-weight: 600;
     color: white;
     margin-top: 10px;
+    border: none;
 }
 
 a{

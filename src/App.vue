@@ -20,26 +20,28 @@ export default{
   created(){
   }
 }
+
 </script>
 
-<template>
-  <div class="pippo">
 
-    
-    <!-- Navbar/Header -->
-    <Navbar />
+<template>
+
+    <div class="">
+
+        <!-- Navbar/Header -->
+        <Navbar />
     
     <!-- Contenuto variabile in base alla rotta in cui si è -->
     <router-view></router-view>
     <!-- Componente 'Carrello', al click apre la visualizzazione del carrelo. -->
     <Cart v-if="$route.path != '/checkout'"/>
 
-    <!-- Footer -->
     <Footer />
 
   </div>
   
 </template>
+
 
 <style lang="scss">
 
@@ -87,36 +89,35 @@ export default{
 }
 
 #app{
-  background-color: var(--bg-light);
-  height: 100vh;
-  overflow-x: hidden;
-  color: var(--text-color);
-  a{
+    background-color: var(--bg-light);
+    height: 100vh;
+    overflow-x: hidden;
     color: var(--text-color);
-  }
-  /* width */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
+    a {
+        color: var(--text-color);
+    }
+    
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--bg-primary-color);
-  border-radius: 10px;
-}
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: var(--bg-primary-color);
+        border-radius: 10px;
+    }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--bg-primary-color);
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--bg-primary-color);
+    }
 }
-}
-
-
 
 </style>

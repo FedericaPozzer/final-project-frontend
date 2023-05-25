@@ -67,6 +67,7 @@ export default{
                         this.isSuccess = 1
                         this.cart.dishes = []
                         console.log(response)
+                        this.$router.push('/success')
                     })
                 })
                 .catch(err => {
