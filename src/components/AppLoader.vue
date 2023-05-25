@@ -9,7 +9,7 @@ export default {
 <template>
   <div class="layover">
     <div class="container-animation">
-      <img class="" src="../../public/logo-loader.png" alt="logo-loader">
+      <img class="" src="../../logo-loader.png" alt="logo-loader">
     </div>
   </div>
 </template>
