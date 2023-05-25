@@ -95,8 +95,10 @@ export default {
         .buttons{
             font-size: 2rem;
             gap: 10px;
+            
             .button{
                 background-color: var(--bg-secondary-color);
+                cursor: pointer;
                 width: 50px;
                 height: 50px;
                 display: flex;
@@ -111,6 +113,8 @@ export default {
             padding: 0.8rem;
             border-radius: 10px;
             font-size: 25px;
+            cursor: pointer;
+
         }
         
     }

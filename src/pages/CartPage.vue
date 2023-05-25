@@ -28,18 +28,19 @@ export default{
                             <span class="name">
                                 {{ dish.name }}
                             </span>
-                            <div class="quantity-buttons d-flex gap-2 justify-content-center">
-                                <div @click="dish.quantity != 1 ? dish.quantity-- : dish.quantity = 1" class="d-flex align-items-center justify-content-end">
+                            <div class="quantity-buttons d-flex gap-3 justify-content-center fs-4">
+
+                                <div @click="dish.quantity != 1 ? dish.quantity-- : dish.quantity = 1" class="d-flex align-items-center justify-content-end btn-hover">
                                     -
                                 </div>
                                 <div class="d-flex align-items-center justify-content-end">
                                     {{ dish.quantity }}
                                 </div>
-                                <div @click="dish.quantity++" class="d-flex align-items-center justify-content-end">
+                                <div @click="dish.quantity++" class="d-flex align-items-center justify-content-end btn-hover">
                                     +
                                 </div>
                             </div>
-                                <div @click="cart.removeDish(i)" class="d-flex align-items-center justify-content-end">
+                                <div @click="cart.removeDish(i)" class="d-flex align-items-center justify-content-end fs-4">
                                     X
                                 </div>
                                 <span></span>
@@ -167,6 +168,9 @@ a{
                 align-items: center;
                 border-radius: 10px;
                 max-height: 50px;
+            }
+            .btn-hover:hover{
+                color: white;
             }
             .description{
                 font-size: .8rem;

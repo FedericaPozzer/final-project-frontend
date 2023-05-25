@@ -67,6 +67,7 @@ export default {
         align-items: center;
         flex-direction: row;
         padding: 10px;
+        cursor: pointer;
         @media screen and (max-width: 768px) {
             flex-wrap: wrap;
         }
