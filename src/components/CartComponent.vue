@@ -141,10 +141,11 @@
     position: fixed;
     width: var(--cartComponent-desktop-height);
     height: 10vh;
+    border: 1px solid black;
     border-radius: 50%;
     background-color: var(--bg-primary-color);
     margin: 2rem;
-    bottom: 0;
+    bottom: 2rem;
     right: 0;
     display: flex;
     justify-content: center;
