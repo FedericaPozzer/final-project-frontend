@@ -4,6 +4,7 @@
 
 /* Importo l'Header/Navbar e il componente'Carrello' */
 import Navbar from './components/navbar/Navbar.vue'
+import Footer from './components/footer/footer.vue'
 import Cart from './components/CartComponent.vue'
 import CartPage from './pages/CartPage.vue'
 
@@ -13,7 +14,8 @@ export default{
     /* Importo i componenti */
     Navbar,
     Cart,
-    CartPage
+    CartPage,
+    Footer
   },
   created(){
   }
@@ -31,6 +33,9 @@ export default{
     <router-view></router-view>
     <!-- Componente 'Carrello', al click apre la visualizzazione del carrelo. -->
     <Cart v-if="$route.path != '/checkout'"/>
+
+    <!-- Footer -->
+    <Footer />
 
   </div>
   
@@ -58,6 +63,9 @@ export default{
 
     //Altezza Navbar
     --navbar-height: 10vh;
+
+    //Altezza Footer
+    --footer-height: 10vh;
 
     //Altezza Jumbotron
     --home-jumbo-height: 25vh;
