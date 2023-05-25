@@ -37,7 +37,7 @@ export default {
             <div class="name">
                 {{dish.name}}
             </div>
-            <div class="description h-100 p-3">
+            <div class="description h-75 p-3 fs-4">
                 {{ dish.description }}
             </div>
 
@@ -45,7 +45,7 @@ export default {
                 <div class="container">
                     <div class="quantityButtons d-flex justify-content-around gap-3 align-items-center">
                         <div class="button" @click="quantity == 1 ? quantity = 1 : quantity--">-</div>
-                        <div class="number">{{quantity}}</div>
+                        <div class="number fs-1">{{quantity}}</div>
                         <div class="button" @click="quantity++">+</div>
                     </div>
                 </div>
@@ -87,8 +87,9 @@ export default {
         padding: 1rem;
         color: white;
         .name{
-            font-size: 2rem;
+            font-size: 2.5rem;
             text-transform: uppercase;
+            font-weight: bold;
         }
 
         .buttons{
@@ -107,8 +108,9 @@ export default {
         }
         .addToCart{
             background-color: var(--bg-secondary-color);
-            padding: 1rem;
+            padding: 0.8rem;
             border-radius: 10px;
+            font-size: 25px;
         }
         
     }
