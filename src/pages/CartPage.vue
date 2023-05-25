@@ -159,7 +159,7 @@ a {
         top: calc(var(--cartComponent-mobile-height) + 4.5rem);
         left: 0;
         right: 0;
-        margin: 10px auto;
+        margin: 10px auto 5rem auto;
 
         .container {
             display: grid;
