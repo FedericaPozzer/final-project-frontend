@@ -34,7 +34,7 @@ export default {
             <!-- DX -->
             <div class="col-4 col-md-8 d-flex justify-content-end align-items-center">                
                 <!-- Powered By -->
-                <div class="ms-4">
+                <div class="ms-4 me-0 me-md-5 me-0">
                     <p class="text">
                         Powered by: Team 7
                     </p>

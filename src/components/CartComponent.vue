@@ -145,7 +145,7 @@
     border-radius: 50%;
     background-color: var(--bg-primary-color);
     margin: 2rem;
-    bottom: 2rem;
+    bottom: 0rem;
     right: 0;
     display: flex;
     justify-content: center;
