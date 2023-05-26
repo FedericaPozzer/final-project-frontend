@@ -30,10 +30,10 @@ export default {
             <!-- DX -->
                 <!-- Powered By -->
                 <div class="names d-flex flex-column">
-                    <a href="https://github.com/ThomasAnselmetto">© Thomas Anselmetto</a>
-                    <a href="https://github.com/GretaFormica">© Greta Formica</a>
-                    <a href="https://github.com/AlessandroMontenero">© Alessandro Montenero</a>
-                    <a href="https://github.com/FedericaPozzer">© Federica Pozzer</a>
+                    <a href="https://github.com/ThomasAnselmetto">Thomas Anselmetto ©</a>
+                    <a href="https://github.com/GretaFormica">Greta Formica ©</a>
+                    <a href="https://github.com/AlessandroMontenero">Alessandro Montenero ©</a>
+                    <a href="https://github.com/FedericaPozzer">Federica Pozzer ©</a>
                 </div>
         </div>
     </footer>
@@ -72,5 +72,10 @@ img{
     margin: 0;
     padding: 0;
     cursor: pointer;
+    text-align: end;
+}
+
+.names {
+    padding-right: 130px;
 }
 </style>
