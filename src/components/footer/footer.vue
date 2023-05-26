@@ -18,29 +18,23 @@ export default {
     <!-- Footer -->
 
     <footer class="header-bar p-2">
-        <div class="row justify-content-around align-items-center w-100">
+        <div class="d-flex justify-content-between align-items-center w-100 mx-2">
             <!-- SX -->
-            <div class="col-5 col-md-4 col-lg-3 logo">
+            <div class="logo">
                 <!-- Logo con redirect homepage -->
-                <div class="d-flex align-items-center">
-                    <a href="/">
-                        <img src="../../assets/icon.png" alt="logo" class="img-fluid">
-                    </a>
-
-                    <p class="m-4">Deliveboo S.r.l. - P.IVA 07392740960</p>
-                </div>
+                <a href="/">
+                    <img src="../../assets/icon.png" alt="logo" class="img-fluid">
+                </a>
             </div>
 
             <!-- DX -->
-            <div class="col-4 col-md-8 d-flex justify-content-end align-items-center">                
                 <!-- Powered By -->
-                <div class="ms-4 me-0 me-md-5 me-0">
-                    <p class="text">
-                        Powered by: Team 7
-                    </p>
-                    
+                <div class="names d-flex flex-column">
+                    <a href="https://github.com/ThomasAnselmetto">© Thomas Anselmetto</a>
+                    <a href="https://github.com/GretaFormica">© Greta Formica</a>
+                    <a href="https://github.com/AlessandroMontenero">© Alessandro Montenero</a>
+                    <a href="https://github.com/FedericaPozzer">© Federica Pozzer</a>
                 </div>
-            </div>
         </div>
     </footer>
     
@@ -73,7 +67,10 @@ img{
     width: 60px;
 }
 
-.text{
-    margin-right: 3vw;
+.names a{
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
 }
 </style>
