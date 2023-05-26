@@ -150,7 +150,8 @@
     position: fixed;
     width: var(--cartComponent-desktop-height);
     height: 10vh;
-    border: 1px solid black;
+    // border: 1px solid black;
+    box-shadow: 0px 0px 20px 3px var(--bg-light);
     border-radius: 50%;
     background-color: var(--bg-primary-color);
     margin: 2rem;
