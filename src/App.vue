@@ -8,7 +8,6 @@ import Footer from './components/footer/footer.vue'
 import Cart from './components/CartComponent.vue'
 import CartPage from './pages/CartPage.vue'
 
-
 export default{
   components: {
     /* Importo i componenti */
